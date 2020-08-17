@@ -150,7 +150,7 @@ The tests for this assignment are in the `assign01` subdirectory.  Each test cas
 export ASSIGN01_DIR=$HOME/git/minicalc
 ```
 
-to set this environment variable.  You will also need to change directory into the `assign01` subdirectory: from the `fall2020-tests directory, run the command
+to set this environment variable.  You will also need to change directory into the `assign01` subdirectory: from the `fall2020-tests` directory, run the command
 
 ```bash
 cd assign01
