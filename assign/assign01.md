@@ -136,7 +136,33 @@ TODO
 
 ## Testing
 
-TODO: information about testing
+Tests can be found in the following repository: <https://github.com/jhucompilers/fall2020-tests>
+
+You can clone this repository using the following command:
+
+```bash
+git clone https://github.com/jhucompilers/fall2020-tests.git
+```
+
+The tests for this assignment are in the `assign01` subdirectory.  Each test case consists of an input file, and either an expected output file or an expected error file.  The `run_test.rb` script executes a single test case.  Before running the script, you will need to set the `ASSIGN01_DIR` environment variable to the full path of the directory containing your `minicalc` executable.  For example, if your work for this assignment is in a directory called `git/minicalc` within your Unix home directory, you could use the command
+
+```bash
+export ASSIGN01_DIR=$HOME/git/minicalc
+```
+
+to set this environment variable.  You will also need to change directory into the `assign01` subdirectory: from the `fall2020-tests directory, run the command
+
+```bash
+cd assign01
+```
+
+The `run_test.rb` script expects a single command line argument, which is the name of the test case.  For example, to run the `arith01` test case, invoke the `run_test.rb` script as follows:
+
+```bash
+./run_test.rb arith01
+```
+
+TODO: more about testing
 
 ## Approach
 
