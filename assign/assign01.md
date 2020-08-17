@@ -20,7 +20,7 @@ This section describes the lexical structure, syntax, and semantics of the calcu
 
 The tokens (lexical units) of the calculator language are as follows.
 
-An *identifier* is a lower-case letter followed by 0 or more lower-case letters or digits.
+An *identifier* is a letter followed by 0 or more letters or digits.  (Letters can be either upper or lower case. Case is significant, so `foo` and `Foo` are different identifiers.)
 
 An *integer literal* is a sequence of 1 or more digits.
 
