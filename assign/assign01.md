@@ -162,7 +162,21 @@ The `run_test.rb` script expects a single command line argument, which is the na
 ./run_test.rb arith01
 ```
 
-TODO: more about testing
+You can run all of the test cases using the `run_all.rb` script:
+
+```bash
+./run_all.rb
+```
+
+We highly encourage you to write your own tests.  To do so, add an input file to the `input` subdirectory.  The input file should have a filename ending in `.in`.  You can use the `genout.sh` script to generate an expected output or expected error file.  For example, if your input file is called `input/contrib17.in`, the command
+
+```bash
+./genout.sh input/contrib17.in
+```
+
+will generate an output file in either the `expected_output` or `expected_error` directory.
+
+We also encourage you to contribute your tests to the repository.  To do so, fork the [fall2020-tests](https://github.com/jhucompilers/fall2020-tests) repository on Github, commit and push new tests, and then create a pull request.  Note that when your changes are incorporated into the repository, your Github identity will become part of the commit history.  Please name your tests using the `contrib` prefix so that they are distinguishable from the "official" tests.
 
 ## Approach
 
