@@ -178,7 +178,7 @@ Example output:
 
 <div class="highlighter-rouge">
 <pre>
-Result: 1577;
+Result: 1577
 </pre>
 </div>
 
