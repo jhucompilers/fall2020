@@ -103,6 +103,16 @@ Result: <i>N</i>
 
 where <i>N</i> is the integer value resulting from evaluating the last expression.
 
+Note that any lines of text of the form
+
+<div class="highlighter-rouge">
+<pre>
+Debug: <i>arbitrary text</i>
+</pre>
+</div>
+
+will be ignored by the [test harness](#testing).  So, you can use messages in this format to print debug messages as you work on the code.
+
 ## Error reporting
 
 Lexical, syntax, and semantic errors should be reported by printing a single line of output to `stderr` or `cerr` of the form
@@ -122,7 +132,9 @@ In an error message:
 
 Line and column values should each start at 1.  Each newline character should increase the current by 1 and reset the column to 1.  All non-newline characters should increase the column by 1.
 
-<i>TODO: examples of what kinds of errors to report</i>
+For syntax errors, the source location information (line and column) should reference the first token that cannot be parsed.
+
+For semantic errors, the source location information (line and column) should reference the token involved in the semantic error. For example, when reporting a use of an undefined variable, the error message should reflect the location of the identifier naming the undefined variable.
 
 ## Additional requirements for 628 students
 
@@ -180,4 +192,84 @@ We also encourage you to contribute your tests to the repository.  To do so, for
 
 ## Approach
 
-TODO: how to approach implementation
+Your work will be divided roughly into the front end (lexical analysis and parsing) and the back end (construction of an intermediate representation, interpretation).
+
+You may find the [example prefix calculator implementation](https://github.com/daveho/pfxcalc) useful as a reference.
+
+## Front end
+
+For implementing the lexical analyzer and parser, it will be helpful to support `-l` and `-p` command line options which, respectively, print out each input token and print a parse tree.  The skeleton code contains support for these options.  For example, let's say that the input file `input/assign02.in` contains the following:
+
+<div class="highlighter-rouge">
+<pre>
+foo = 13;
+bar = 24;
+foo * bar;
+</pre>
+</div>
+
+We could invoke `minicalc` to print the input tokens as follows (user input in **bold**):
+
+<div class="highlighter-rouge">
+<pre>
+$ ./minicalc -l input/assign02.in 
+0:foo
+6:=
+1:13
+8:;
+0:bar
+6:=
+1:24
+8:;
+0:foo
+4:&#42;
+0:bar
+8:;
+</pre>
+</div>
+
+Note that the token codes are just being printed as integers (0 means identifier, 6 means assignment, etc.)
+
+Similarly, we could invoke `minicalc` to print a parse tree as follows (user input in **bold**):
+
+<div class="highlighter-rouge">
+<pre>
+$ <b>./minicalc -p input/assign02.in</b>
+Parse tree:
+U
++--ASSIGN[=]
+|  +--P
+|  |  +--IDENTIFIER[foo]
+|  +--P
+|     +--INTEGER&#95;LITERAL[13]
++--SEMICOLON[;]
++--U
+   +--ASSIGN[=]
+   |  +--P
+   |  |  +--IDENTIFIER[bar]
+   |  +--P
+   |     +--INTEGER&#95;LITERAL[24]
+   +--SEMICOLON[;]
+   +--U
+      +--TIMES[*]
+      |  +--P
+      |  |  +--IDENTIFIER[foo]
+      |  +--P
+      |     +--IDENTIFIER[bar]
+      +--SEMICOLON[;]
+</pre>
+</div>
+
+Note that your parse tree will likely be structured differently, according to the grammar and parsing techniques you used.
+
+Speaking of parsing techniques, the input langugage has left-associative operators, which often are implemented using left-recursive grammar productions.  Since recursive descent parsers can't handle left recursion, you'll either want to eliminate the left recursion, or use a general infix expression parsing technique such as precedence climbing.
+
+## Back end
+
+You can either use the parse tree directly as your intermediate representation, or you can have the interpreter build an abstract syntax tree from the parsed input.
+
+An STL map of strings to `long` values is a good data structure to use for keeping track of the values of variables.
+
+# Submitting
+
+TODO: information about how to submit, packaging requirements, etc.
