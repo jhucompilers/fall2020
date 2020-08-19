@@ -12,6 +12,24 @@ expressions using 64 bit signed integer values.  The main purpose of the assignm
 provide an opportunity implement a lexer, parser, and runtime support for a simple but
 nontrivial language.
 
+# Getting started
+
+Start by downloading the assignment skeleton: [assign01.zip](assign01.zip)
+
+Starter code is provided, including:
+
+* the `main` function
+* skeleton implementations for the `struct Lexer` and `struct Parser` data types
+* a complete implementation of the `struct Node` data type, which can be used for representation of lexical tokens and tree nodes (parse tree and/or AST)
+* the `treeprint` module for printing trees built from `struct Node` instances
+* the `util` module, which includes functions for memory allocation, string duplication, and reporting of fatal errors
+* the `cpputil` module, which includes a function (`cpputil::format`) for creating a C++ `std::string` value using printf-style formatting
+* the `error` module, which has functions for formatting error messages based on `struct SourceInfo` information (filename, line and column numbers)
+
+You may use the provided code in whatever way you see fit, including making changes, or not using it at all.
+
+Note that as provided, all of the struct data types (`struct Node`, `struct Lexer`, etc.) are *opaque data types*. This means that the header file defines the type only as a forward declaration, and all access to data (other than in the type's implementation module) must be done using accessor functions.  The implementation of the data type and its accessor functions is in a separate module, which you can implement using either C or C++.  The assignment skeleton assumes you will use C++.  For example, the source module `lexer.cpp` contains the definition of the `struct Lexer` data type and its accessor functions.
+
 # Language specification
 
 This section describes the lexical structure, syntax, and semantics of the calculator language.
@@ -136,15 +154,52 @@ For syntax errors, the source location information (line and column) should refe
 
 For semantic errors, the source location information (line and column) should reference the token involved in the semantic error. For example, when reporting a use of an undefined variable, the error message should reflect the location of the identifier naming the undefined variable.
 
+There is no specific requirement for the *explanation* text in an error message, other than that it should be a meaningful explanation of the error.
+
 ## Additional requirements for 628 students
 
 TODO: explanation of additional requirements for students taking 601.628
 
 # Examples, hints, advice, etc.
 
-## Example invocations and expected results
+This section has examples, hints, and advice about implementation.
 
-TODO
+## Example inputs and expected results
+
+Example input:
+
+<div class="highlighter-rouge">
+<pre>
+19 * (3 + 2^4 * 5);
+</pre>
+</div>
+
+Example output:
+
+<div class="highlighter-rouge">
+<pre>
+Result: 1577;
+</pre>
+</div>
+
+Example input:
+
+<div class="highlighter-rouge">
+<pre>
+a = 11;
+b = 9;
+c = 24;
+a * b + c;
+</pre>
+</div>
+
+Example output:
+
+<div class="highlighter-rouge">
+<pre>
+Result: 123
+</pre>
+</div>
 
 ## Testing
 
@@ -212,7 +267,7 @@ We could invoke `minicalc` to print the input tokens as follows (user input in *
 
 <div class="highlighter-rouge">
 <pre>
-$ ./minicalc -l input/assign02.in 
+$ <b>./minicalc -l input/assign02.in</b>
 0:foo
 6:=
 1:13
@@ -228,7 +283,7 @@ $ ./minicalc -l input/assign02.in
 </pre>
 </div>
 
-Note that the token codes are just being printed as integers (0 means identifier, 6 means assignment, etc.)
+Note that the token codes are just being printed as integers (0 means identifier, 6 means assignment, etc.)  Your lexer might use different token codes, but the lexemes it identifies should be the same as specified above.
 
 Similarly, we could invoke `minicalc` to print a parse tree as follows (user input in **bold**):
 
