@@ -14,7 +14,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## Important links
 
-* Piazza (ask questions here!): Link coming soon
+* Piazza (ask questions here!): <https://piazza.com/jhu/fall2020/601428>
 * Gradescope (assignment submission): <https://www.gradescope.com/>
 
 ## News
