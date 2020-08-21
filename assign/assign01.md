@@ -93,7 +93,9 @@ The `=` operator performs variable assignment.  Note that the left-hand operand 
 
 is a syntactically valid expression according to the [Syntax](#syntax) section above, it is not semantically valid because the left hand side is not an identifier.  The result of evaluating an assignment expression is the same as the result of evaluating the right-hand subexpression.  So, the result of evaluating `a = 3` is 3.  Note that because assignments are right-associative, they may be "chained".  For example, the expression `a = b = 3` will assign the value 3 to both `b` and `a`.
 
-Your calculator program should evaluate each expression in order.  If a variable is assigned in an earlier expression, its value can be used in a later expression.  The result of evaluating the last expression is the overall result of the entire unit.
+Your calculator program should evaluate each expression in order.  If a variable is assigned in an earlier expression, its value can be used in a later expression.  For variables defined by assignments, an assignment must occur before any use of the value of the variable.  The result of evaluating the last expression is the overall result of the entire unit.
+
+Note that if you are taking 601.628, you will be required to support *weak assignments*, which work somewhat differently than normal assignments.  See [Additional requirements for 628 students](#additional-requirements-for-628-students).
 
 # Requirements
 
@@ -158,7 +160,36 @@ There is no specific requirement for the *explanation* text in an error message,
 
 ## Additional requirements for 628 students
 
-TODO: explanation of additional requirements for students taking 601.628
+This section describes the additional requirements for students taking 601.628.
+
+In addition to the base features, your calculator will need to support *weak assignments*.  A weak assignment has the same precedence and associativity as a normal assignment, but uses the token `:-`.  Weak assignments must be at the top level of the expression in which they occur, i.e., they may not be nested in subexpressions.  Also, a calculator input may not contain a mix of normal assignments and weak assignments, and it is an error if both normal and weak assignments are used.
+
+Weak assignments should be evaluated on demand.  For example, consider the following input:
+
+```
+a :- b + c;
+b :- c * 3;
+c :- 2;
+a;
+```
+
+The overall evaluation result should be 8 because:
+
+* `a` is the sum of `b` and `c`
+* `b` is `c` times 3
+* `c` is 2
+
+Evaluating `a` will force on-demand evaluation of `b` and `c`, and evaluating `b` will force on-demand evaluation of `c`.  Once the value of a weak variable is known, your calculator should assume that it will not change.
+
+Weak variables may not be defined cyclically.  For example, the input
+
+```
+a :- b;
+b :- a;
+a + b;
+```
+
+is not semantically valid because weak variables `a` and `b` are cyclic.  One way to formalize whether weak variables are defined cyclically is to think of each weak assignment as a node in a graph, with edges going to nodes representing the weak variables used in expression defining the weak variable.  The input is only valid if the graph is acyclic.
 
 # Examples, hints, advice, etc.
 
