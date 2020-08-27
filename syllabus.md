@@ -55,7 +55,18 @@ Videos will be posted on Blackboard: go to <http://my.jhu.edu>, log in, choose <
 
 ## Course Goals
 
-TODO: outcomes
+By the end of the course, you will
+
+* Describe lexical structure using regular expressions
+* Implement lexical analyzers using ad-hoc techniques and lexical analyzer generators
+* Describe syntactic structure using context-free grammars
+* Design grammars to achieve desired semantic properties
+* Design grammars suitable for top-down and bottom-up parsing techniques
+* Implement intermediate representations such as abstract syntax trees and control-flow graphs
+* Use intermediate representations for interpretation
+* Use intermediate representations for semantic analysis
+* Use intermediate representations for code generation
+* Optimize generated code for code size and run-time efficiency
 
 This course will address the following Criterion 3 Student Outcomes:
 
