@@ -24,9 +24,9 @@ Andrew Rojas and Devin Hill (see [Piazza](https://piazza.com/jhu/fall2020/601428
 
 ## Meeting
 
-MW 1:00–2:15 pm
+MW 12:00–1:15 pm EDT
 
-Class meetings will be held virtually via Zoom.  See [Piazza](https://piazza.com/jhu/fall2020/601428) for URLs.
+Class meetings will be held virtually via Zoom.  See [Piazza](https://piazza.com/jhu/fall2020/601428) for URL(s).
 
 ## Textbook
 
@@ -46,7 +46,7 @@ Videos will be posted on Blackboard: go to <http://my.jhu.edu>, log in, choose <
 
 ## Course Information
 
-* TODO: course description
+* Introduction to compiler design, including lexical analysis, parsing, syntax-directed translation, symbol tables, runtime environments, and code generation and optimization. Students are required to write a compiler as a course project.
 * **Prerequisites**<br>
   Intermediate Programming (EN.601.220)<br>
   Data Structures (EN.601.226)<br>
@@ -92,7 +92,11 @@ in-class activities.
 
 Your course grade will be determined as follows:
 
-TODO: grade determination
+* Programming assignments: 55%
+* Exams: 40%
+* Participation/activities: 5%
+
+You have a total of 5 late days to use as needed for homework assignments throughout the course. Each 24 hour period following an assignment deadline is considered to be one late day: for example, if an assignment is due at 11pm on Friday, but you submit your assignment at 11:30pm on Friday, you have used one late day. If you are planning on using more than two late days on an assignment, please send a private message to the instructors on Piazza to let us know. Assignment submissions which exceed the maximum number of late days will (generally) not be considered for credit.  Having said that, we understand that exceptional circumstances can arise.  If you are in a situation where you think you may need additional late days, please notify your instructor.
 
 ## Key Dates
 
