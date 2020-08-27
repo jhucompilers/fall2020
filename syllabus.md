@@ -12,15 +12,15 @@ category: "syllabus"
 
 ## Instructor
 
-David Hovemeyer
+[David Hovemeyer](https://www.cs.jhu.edu/~daveho)
 
 Office: Malone 337
 
-Office hours: TBD
+Office hours: T/Th 1-3 pm EDT (see [Piazza](https://piazza.com/jhu/fall2020/601428) for Zoom URL)
 
 ## Course Assistants
 
-TODO
+Andrew Rojas and Devin Hill (see [Piazza](https://piazza.com/jhu/fall2020/601428) for office hours and Zoom URLs)
 
 ## Meeting
 
@@ -65,7 +65,14 @@ Graduates of the program will have an ability to:
 
 ## Course Topics
 
-TODO: topics
+* Lexical analysis
+* Parsing
+* Intermediate representations
+* Interpretation
+* Semantic analysis and type checking
+* Runtime environments
+* Code generation
+* Code optimization
 
 ## Course Expectations &amp; Grading
 
