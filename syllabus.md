@@ -57,11 +57,12 @@ Videos will be posted on Blackboard: go to <http://my.jhu.edu>, log in, choose <
 
 By the end of the course, you will
 
-* Describe lexical structure using regular expressions
+* Describe lexical structure using regular expressions and finite automata
 * Implement lexical analyzers using ad-hoc techniques and lexical analyzer generators
 * Describe syntactic structure using context-free grammars
 * Design grammars to achieve desired semantic properties
 * Design grammars suitable for top-down and bottom-up parsing techniques
+* Implement parsers using ad-hoc techniques and parser generators
 * Implement intermediate representations such as abstract syntax trees and control-flow graphs
 * Use intermediate representations for interpretation
 * Use intermediate representations for semantic analysis
@@ -92,9 +93,8 @@ in-class activities.
 
 Your course grade will be determined as follows:
 
-* Programming assignments: 55%
+* Programming assignments: 60%
 * Exams: 40%
-* Participation/activities: 5%
 
 You have a total of 5 late days to use as needed for homework assignments throughout the course. Each 24 hour period following an assignment deadline is considered to be one late day: for example, if an assignment is due at 11pm on Friday, but you submit your assignment at 11:30pm on Friday, you have used one late day. If you are planning on using more than two late days on an assignment, please send a private message to the instructors on Piazza to let us know. Assignment submissions which exceed the maximum number of late days will (generally) not be considered for credit.  Having said that, we understand that exceptional circumstances can arise.  If you are in a situation where you think you may need additional late days, please notify your instructor.
 
