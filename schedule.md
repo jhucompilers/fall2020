@@ -9,7 +9,7 @@ The links to slides are provided for reference.  In general, there is no guarant
 
 Date               | Topic/Slides | Reading
 ------------------ | ------------ | ------------
-Mon, Aug 31 | Course intro, lexical analysis 
+Mon, Aug 31 | Course intro, lexical analysis [slides](lectures/lecture01-public.pdf)
 Wed, Sep 2 | Context free grammars, parse trees, ambiguity, recursive descent parsing
 Mon, Sep 7 | Operator precedence parsing, building a tiny interpreter
 Wed, Sep 9 | Lexical analyzer generators, lex/flex
