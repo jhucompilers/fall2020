@@ -163,29 +163,60 @@ the web at these sites:
 * For undergraduates: <http://e-catalog.jhu.edu/undergrad-students/student-life-policies/>
 * For graduate students: <http://e-catalog.jhu.edu/grad-students/graduate-specific-policies/>
 
-## Personal Wellbeing
-
-* If you are sick, in particular with an illness that may be contagious, notify me by email but do not come to class. Rather, visit the Health and Wellness: 1 East 31 Street, 410-516-8270. See also <http://studentaffairs.jhu.edu/student-life/support-and-assistance/absences-from-class/illness-note-policy/>
-* All students with disabilities who require accommodations for this course should contact me at their earliest convenience to discuss their specific needs. If you have a documented disability, you must be registered with the JHU Office for Student Disability Services (Shaffer 101; 410-516-4720; <http://web.jhu.edu/disabilities/>) to receive accommodations.
-* If you are struggling with anxiety, stress, depression or other mental health related concerns, please consider visiting the JHU Counseling Center.  If you are concerned about a friend, please encourage that person to seek out our services. The Counseling Center is located at 3003 North Charles Street in Suite S-200 and can be reached at 410-516-8278 and online at <http://studentaffairs.jhu.edu/counselingcenter/>
-
 ## Classroom Climate
 
-I am committed to creating a classroom environment that values the diversity of experiences and perspectives that all students bring. Everyone here has the right to be treated with dignity and respect. I believe fostering an inclusive climate is important because research and my experience show that students who interact with peers who are different from themselves learn new things and experience tangible educational outcomes. Please join me in creating a welcoming and vibrant classroom climate. Note that you should expect to be challenged intellectually by me, the TAs, and your peers, and at times this may feel uncomfortable. Indeed, it can be helpful to be pushed sometimes in order to learn and grow. But at no time in this learning process should someone be singled out or treated unequally on the basis of any seen or unseen part of their identity.
+As your instructor, I am committed to creating a classroom environment that values the diversity of experiences and perspectives that all students bring. Everyone here has the right to be treated with dignity and respect. I believe fostering an inclusive climate is important because research and my experience show that students who interact with peers who are different from themselves learn new things and experience tangible educational outcomes. Please join me in creating a welcoming and vibrant classroom climate. Note that you should expect to be challenged intellectually by me, the TAs, and your peers, and at times this may feel uncomfortable. Indeed, it can be helpful to be pushed sometimes in order to learn and grow. But at no time in this learning process should someone be singled out or treated unequally on the basis of any seen or unseen part of their identity.
 
 If you ever have concerns in this course about
-harassment, discrimination, or any unequal treatment, or if you seek
-accommodations or resources, I invite you to share directly with me or
-the TAs. I promise that we will take your communication seriously and
-to seek mutually acceptable resolutions and accommodations. Reporting
-will never impact your course grade. You may also share concerns with
-the Department Head (Randal Burns,
-[randal@cs.jhu.edu](mailto:randal@cs.jhu.edu)),
-the Director of Undergraduate Studies (Joanne Selinski,
-[joanne@cs.jhu.edu](mailto:joanne@cs.jhu.edu)), the Assistant
-Dean for Diversity and Inclusion (Darlene Saporu,
-[dsaporu@jhu.edu](mailto:dsaporu@jhu.edu)), or
-the Office of Institutional Equity ([oie@jhu.edu](mailto:oie@jhu.edu)). In handling reports,
-people will protect your privacy as much as possible, but faculty
-and staff are required to officially report information for some cases
-(e.g. sexual harassment).
+harassment, discrimination, or any unequal treatment, or if you seek
+accommodations or resources, I invite you to share directly with me or
+the TAs. I promise that we will take your communication seriously and
+to seek mutually acceptable resolutions and accommodations. Reporting
+will never impact your course grade. You may also share concerns
+with the department/center chair/head/director (Randal Burns, [randal@cs.jhu.edu](mailto:randal@cs.jhu.edu)),
+the Director of Undergraduate Studies (Joanne Selinski, [joanne@cs.jhu.edu](mailto:joanne@cs.jhu.edu)),
+the Assistant Dean for Diversity and Inclusion (Darlene Saporu, [dsaporu@jhu.edu](mailto:dsaporu@jhu.edu)),
+or the Office of Institutional Equity ([oie@jhu.edu](mailto:oie@jhu.edu)).
+In handling reports, people will protect your privacy
+as much as possible, but faculty and staff are required to
+officially report information for some cases (e.g. sexual harassment).
+
+## Family Accommodations Policy
+
+You are welcome to bring a family member to class on occasional days
+when your responsibilities require it (for example, if emergency child
+care is unavailable, or for health needs of a relative).  In fact,
+you may see my children in class on days when their school is closed. 
+Please be sensitive to the classroom environment, and if your family
+member becomes uncomfortably disruptive, you may leave the classroom
+and return as needed.
+
+## University Policy on Incompletes
+
+The university recognizes that the Fall 2020 semester is surrounded
+with uncertainty and many students may find themselves in unexpected
+situations where study is difficult if not impossible. Students who are
+confronted with extraordinary circumstances that interfere with their
+ability perform their academic work may request an incomplete grade
+from the instructor. While approval of such a request is not automatic,
+it is expected that faculty will make every effort to accommodate
+students dealing with illness in the family and other pandemic-related
+hardships. The instructor and student must establish a timetable for
+submitting the unfinished work with a final deadline no later than
+the end of the third week of the Spring 2021 semester (**February 12,
+2021**). Exceptions to this deadline require a petition from the instructor
+to the student's academic advising office by February 12, 2021. When
+entering an Incomplete grade in SIS, faculty must include a reversion
+grade which represents the grade the student will receive if s/he does
+not complete the missing work by the agreed-upon deadline.
+
+## Deadlines for Adding, Dropping and Withdrawing from Courses
+
+Students may add a course up to **September 11, 2020**. They may drop courses
+up to **October 12, 2020** provided they remain registered for a minimum of 12
+credits. Between **October 12 and November 13, 2020**, a student may withdraw
+from a course with a W on their academic record. A record of the course
+will remain on the academic record with a W appearing in the grade column
+to indicate that the student registered and then withdrew from the course.
+
+For more information on these and other academic policies, see <https://e-catalogue.jhu.edu/engineering/full-time-residential-programs/undergraduate-policies/academic-policies/grading-policies/>
