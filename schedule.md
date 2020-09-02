@@ -7,6 +7,8 @@ This page lists lecture topics and readings.
 
 The links to slides are provided for reference.  In general, there is no guarantee that they will be posted before class, or that their content will not change.
 
+*Note*: The schedule will become more concrete as the semester progresses. Expect it to be updated frequently.
+
 Date               | Topic/Slides | Reading
 ------------------ | ------------ | ------------
 Mon, Aug 31 | Course intro, lexical analysis: [slides](lectures/lecture01-public.pdf)
