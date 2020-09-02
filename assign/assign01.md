@@ -3,7 +3,7 @@ layout: default
 title: "Assignment 1: Mini Calculator"
 ---
 
-Due: TBD
+Due: **Wednesday, Sept 16th**
 
 # Overview
 
