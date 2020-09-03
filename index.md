@@ -19,5 +19,6 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Sep 3** — The [Schedule](schedule.html) has been updated to include suggested readings.
 * **Sep 2** — [Assignment 1](assign/assign01.html) is due **Wednesday, September 16th** by 11pm.
 * **Aug 31** — Welcome!

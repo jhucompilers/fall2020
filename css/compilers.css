@@ -125,6 +125,11 @@ code.highlighter-rouge {
 	margin-bottom: 2em;
 }
 
+.tentative {
+	color: #888;
+	font-style: italic;
+}
+
 /*
 vim:ts=2:
 */
