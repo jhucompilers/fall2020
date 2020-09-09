@@ -19,9 +19,9 @@ Date               | Topic/Slides | Reading
 Mon, Aug 31 | Course intro, lexical analysis: [slides](lectures/lecture01-public.pdf)
 Wed, Sep 2 | Context free grammars, parse trees, ambiguity, recursive descent parsing: [slides](lectures/lecture02-public.pdf) | EaC 3.1–3.2
 Mon, Sep 7 | *Holiday, no class*
-Wed, Sep 9 | Limitations of recursive descent, precedence climbing, LL(1) | EaC 3.3
+Wed, Sep 9 | Limitations of recursive descent, precedence climbing: [slides](lectures/lecture03-public.pdf) | EaC 3.3
 Mon, Sep 14 | Lexical analyzer generators, lex/flex | EaC 2.1–2.5,<br>F&amp;B Chapters 1–2
-Wed, Sep 16 | Bottom-up parsing algorithms, LR(1) | EaC 3.4–3.5
+Wed, Sep 16 | LL(1), LR(1) | EaC 3.4–3.5
 Mon, Sep 21 | <span class="tentative">Parser generators, yacc/bison, synthesized attributes</span>
 Wed, Sep 23 | <span class="tentative">Interpreters, intermediate representations, run-time data structures</span>
 Mon, Sep 28 | <span class="tentative">Building a more sophisticated interpreter, garbage collection</span>
