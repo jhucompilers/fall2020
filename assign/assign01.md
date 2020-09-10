@@ -12,6 +12,14 @@ expressions using 64 bit signed integer values.  The main purpose of the assignm
 provide an opportunity implement a lexer, parser, and runtime support for a simple but
 nontrivial language.
 
+## Grading criteria
+
+The grading criteria are as follows:
+
+* Packaging: 5%
+* Design and coding style: 10%
+* Functional requirements: 85%
+
 # Getting started
 
 Start by downloading the assignment skeleton: [assign01.zip](assign01.zip)
@@ -358,4 +366,12 @@ An STL map of strings to `long` values is a good data structure to use for keepi
 
 # Submitting
 
-TODO: information about how to submit, packaging requirements, etc.
+To submit, create a zipfile containing all of the files needed to compile your program.  Suggested command:
+
+```bash
+zip -9r solution.zip Makefile *.h *.c *.cpp
+```
+
+The suggested command would create a zipfile called `solution.zip`.  Note that if your solution uses C exclusively, you can omit `*.cpp` from the filename patterns.
+
+Upload your submission to [Gradescope](https://www.gradescope.com).  If you are registered for 601.428, upload to **Assign01&#95;428**.  If you are registered for 601.628, upload to **Assign01&#95;628**.
