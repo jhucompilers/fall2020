@@ -187,7 +187,7 @@ The overall evaluation result should be 8 because:
 * `b` is `c` times 3
 * `c` is 2
 
-Evaluating `a` will force on-demand evaluation of `b` and `c`, and evaluating `b` will force on-demand evaluation of `c`.  Once the value of a weak variable is known, your calculator should assume that it will not change.
+Evaluating `a` will force on-demand evaluation of `b` and `c`, and evaluating `b` will force on-demand evaluation of `c`. There cannot be multiple weak assignments to the same variable. Inputs where there are multiple assignments to the same variable should result in an error.
 
 Weak variables may not be defined cyclically.  For example, the input
 
