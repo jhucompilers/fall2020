@@ -21,18 +21,18 @@ Wed, Sep 2 | Context free grammars, parse trees, ambiguity, recursive descent pa
 Mon, Sep 7 | *Holiday, no class*
 Wed, Sep 9 | Limitations of recursive descent, precedence climbing: [slides](lectures/lecture03-public.pdf) | EaC 3.3
 Mon, Sep 14 | Lexical analyzer generators, lex/flex: [slides](lectures/lecture04-public.pdf), [lexdemo.zip](lectures/lexdemo.zip) | EaC 2.1–2.5,<br>F&amp;B Chapters 1–2
-Wed, Sep 16 | LL(1), LR(1) | EaC 3.4–3.5
-Mon, Sep 21 | <span class="tentative">Parser generators, yacc/bison, synthesized attributes</span>
-Wed, Sep 23 | <span class="tentative">Interpreters, intermediate representations, run-time data structures</span>
-Mon, Sep 28 | <span class="tentative">Building a more sophisticated interpreter, garbage collection</span>
-Wed, Sep 30 | <span class="tentative">Compilers, semantic analysis, types, symbol tables</span>
-Mon, Oct 5 | <span class="tentative">C programming language syntax and semantics</span>
-Wed, Oct 7 | <span class="tentative">Intermediate representations, control-flow graphs</span>
-Mon, Oct 12 | <span class="tentative">High-level code generation</span>
-Wed, Oct 14 | <span class="tentative">Low-level code generation, x86-64 assembly language</span>
-Mon, Oct 19 | <span class="tentative">Control flow</span>
-Wed, Oct 21 | <span class="tentative">Procedures</span>
-Mon, Oct 26 | 
+Wed, Sep 16 | LL(1) parsing: [slides](lectures/lecture05-public.pdf) | EaC 3.3
+Mon, Sep 21 | Parser generators, yacc/bison, synthesized attributes | F&amp;B Chapter 3
+Wed, Sep 23 | LR(1) parsing | EaC 3.4
+Mon, Sep 28 | <span class="tentative">Interpreters, intermediate representations, run-time data structures</span>
+Wed, Sep 30 | <span class="tentative">Building a more sophisticated interpreter, garbage collection</span>
+Mon, Oct 5 | <span class="tentative">Compilers, semantic analysis, types, symbol tables</span>
+Wed, Oct 7 | <span class="tentative">C programming language syntax and semantics</span>
+Mon, Oct 12 |<span class="tentative">Intermediate representations, control-flow graphs</span> 
+Wed, Oct 14 | <span class="tentative">High-level code generation</span>
+Mon, Oct 19 | <span class="tentative">Low-level code generation, x86-64 assembly language</span>
+Wed, Oct 21 | <span class="tentative">Control flow</span>
+Mon, Oct 26 | <span class="tentative">Procedures</span>
 Wed, Oct 28 | <span class="tentative">Peephole optimization</span>
 Mon, Nov 2 | 
 Wed, Nov 4 | 
