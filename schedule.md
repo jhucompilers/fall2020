@@ -22,7 +22,7 @@ Mon, Sep 7 | *Holiday, no class*
 Wed, Sep 9 | Limitations of recursive descent, precedence climbing: [slides](lectures/lecture03-public.pdf) | EaC 3.3
 Mon, Sep 14 | Lexical analyzer generators, lex/flex: [slides](lectures/lecture04-public.pdf), [lexdemo.zip](lectures/lexdemo.zip) | EaC 2.1–2.5,<br>F&amp;B Chapters 1–2
 Wed, Sep 16 | LL(1) parsing: [slides](lectures/lecture05-public.pdf) | EaC 3.3
-Mon, Sep 21 | Parser generators, yacc/bison, synthesized attributes | F&amp;B Chapter 3
+Mon, Sep 21 | Parser generators, yacc/bison: [slides](lectures/lecture06-public.pdf) | F&amp;B Chapter 3
 Wed, Sep 23 | LR(1) parsing | EaC 3.4
 Mon, Sep 28 | <b>Exam 1 out</b>, Interpreters, intermediate representations, run-time data structures
 Wed, Sep 30 | <span class="tentative">Building a more sophisticated interpreter, garbage collection</span>
