@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Sep 22** — [Assignment 2](assign/assign02.html) has been posted, due **Friday, October 16th** by 11pm.
 * **Sep 13** — The due date for [Assignment 1](assign/assign01.html) has been moved to **Friday, September 18th** by 11pm.
 * **Sep 3** — The [Schedule](schedule.html) has been updated to include suggested readings.
 * **Sep 2** — [Assignment 1](assign/assign01.html) is due **Wednesday, September 16th** by 11pm.
