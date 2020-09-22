@@ -3,9 +3,11 @@ layout: default
 title: "Assignment 2: Interpreter"
 ---
 
-*Preliminary assignment description, not official yet*
+*This assignment description is somewhat preliminary, and is likely to be updated*
 
-**Due**: TBD
+Due: **Friday, Oct 16th** by 11pm
+
+Points: This assignment is worth 200 points
 
 # Overview
 
@@ -274,7 +276,52 @@ Coming soon.
 
 # Examples, hints, advice, etc.
 
-TODO
+## Strategy
+
+This is a very substantial assignment.  You will want to make progress in stages.  Here is a recommended approach.
+
+Start by implementing the lexical analyzer and parser.  Using the `-p` command line option will cause the `interp` program to print a parse tree rather than executing the program.  For example, if `t/t1.txt` contains
+
+```
+1 + 2;
+```
+
+then the invocation `./interp -p t/t1.txt` might produce the following output:
+
+```
+translation_unit
++--statement_or_function
+   +--statement
+      +--expression
+      |  +--assignment_expression
+      |     +--logical_or_expression
+      |        +--logical_and_expression
+      |           +--relational_expression
+      |              +--additive_expression
+      |                 +--additive_expression
+      |                 |  +--multiplicative_expression
+      |                 |     +--unary_expression
+      |                 |        +--primary_expression
+      |                 |           +--INT_LITERAL[1]
+      |                 +--PLUS[+]
+      |                 +--multiplicative_expression
+      |                    +--unary_expression
+      |                       +--primary_expression
+      |                          +--INT_LITERAL[2]
+      +--SEMICOLON[;]
+```
+
+Note that the structure of the parse tree will depend on how you structure your grammar rules, so the parse tree produced by your interpreter could be different.
+
+Once you're happy with lexical analyzer and parser, add code to create an AST for the program.  You could implement a recursive transformation of parse trees to ASTs, or you could modify the parser to create a ASTs.  It is possible to create a single AST for the entire program, or create separate ASTs for each definition in the program's translation unit.  For example, an AST representation of the expression statement evaluating `1 + 2` in the preceding program might be as follows:
+
+```
+AST_ADD
++--AST_INTLITERAL[1]
++--AST_INTLITERAL[2]
+```
+
+Once your interpreter is able to construct an AST-based representation for each definition, it can evaluate each definition.
 
 ## Testing
 
