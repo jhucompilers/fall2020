@@ -90,3 +90,148 @@ A *primary-expression* is an identifier, integer literal, parenthesized subexpre
 A *function-call* has the form <code class="highlighter-rouge"><i>identifier</i> (<i>opt-argument-list</i>)</code>.  An *opt-argument-list* is a comma-separated sequence of zero or more expressions.
 
 You will need to add grammar rules to `parse.y` according to these specifications.
+
+## Semantics
+
+Your interpreter will evaluate programs for a real programming language, so the semantics are considerably more interesting than in [Assignment 1](assign01.html).
+
+This section is a reasonably precise run-time semantics of interpreter programs; however, the [test suite](#testing) is also an extremely *useful* specification of run-time semantics.
+
+### Values
+
+The interpreter language is dynamically-typed: variables can contain any kind of value.
+
+Values are defined by the `ValueKind` enumeration and the `Value` struct data type (in `value.h`):
+
+```c
+enum ValueKind {
+  VAL_VOID,
+  VAL_ERROR,
+  VAL_INT,
+  VAL_FN,
+  VAL_INTRINSIC,
+  // could add additional kinds of values...
+};
+
+struct Value {
+  enum ValueKind kind;
+  long ival;
+  struct Function *fn;
+  IntrinsicFunction *intrinsic_fn;
+
+  // You may add additional struct members for additional kinds
+  // of values.
+};
+```
+
+Instances of `struct Value` in the interpreter are meant to be accessed by value (rather than being dynamically-allocated).
+
+The `kind` field specifies what kind of value a `struct Value` instance represents.
+
+For `VAL_INT` values, the `ival` field stores a (64 bit signed) integer value.
+
+For `VAL_FN` values, the `fn` field stores a pointer to a `struct Function`.
+
+For `VAL_INTRINSIC` values, the `intrinsic_fn` field stores a pointer to an `IntrinsicFunction`.  The `IntrinsicFunction` type is defined as follows:
+
+```c
+typedef struct Value IntrinsicFunction(struct Value *args, int num_args,
+                                       struct Interp *interp);
+```
+
+All of the infix operators, with the important exception of `==` and `!=`, operate exclusively on integer values.  It is a run-time error to apply an infix operator other than `==` and `!=` to a non-integer value.
+
+The unary `-` operator is also only defined for integer values, and it is a run-time error to apply it to a non-integer value.
+
+### Variables
+
+Variables must be explicitly declared with a variable declaration statement.  Variable declarations define in functions are local to the function.  Other variables are global variables.
+
+Local variables in functions have the entire function as their scope, even if they are defined in nested blocks of loops or if/else statements.  (This is similar to JavaScript.)  Variables must be declared before being referenced.
+
+Uninitialized variables have the initial integer value 0.
+
+A primary expression which is an identifier is a variable reference.
+
+### Expressions
+
+An expression computes a value.
+
+Primary expressions should be computed as follows:
+
+* A variable reference yields the value of the named variable
+* An integer literal is a `VAL_INT` value converted from the lexeme of the integer literal token
+* A function call evaluates each argument expression in order from left to right and passes them as parameters to the called function
+
+The infix operators, when operating on two `VAL_INT` values, should behave the same way as the corresponding C/C++ operators.
+
+As a special case, the `==` and `!=` operators may also be used with `VAL_NIL` values.  Two `VAL_NIL` values should compare as equal to each other.  If a `VAL_INT` value is compared to a `VAL_NIL` value, they are not equal.
+
+The unary `-` operator, when applied to a `VAL_INT` value, should return the negation of that value.  I.e., the unary `-` operator applied to a variable reference `n` should do the same compuation as the expression `0 - n` would.
+
+### Statements and statement lists
+
+When evaluating a statement list, the value of the statement list is the value of the last statement.
+
+Evaluating an expression statement yields the result of evaluating the expression.
+
+An if or if/else statement should work as follows
+
+* the condition is evaluated
+* if the result of evaluating a condition is a "true" value, then the if clause is evaluated
+* if the result of evaluating a condition is not a "true" value, and there is an else clause, then the else clause is evaluated
+* the result of evaluating an if or if/else statement is a `VAL_VOID` value
+
+A while loop is similar to an if statement (without an else clause), except that the loop body is evaluated repreatedly as long as the condition evaluates to a "true" value.  The result of evaluating a while statement is a `VAL_VOID` value.
+
+### "true" values
+
+A nonzero `VAL_INT` value is a true value.
+
+A `VAL_FN`, `VAL_INTRINSIC`, or `VAL_CONS` value is a true value.
+
+Any other value is *not* a true value.
+
+### Functions and function calls
+
+Note that variables and functions are in the same namespace.  A variable reference naming a function produces a `VAL_FN` value; i.e., the value is the function the name refers to.  Function calls should do a variable lookup to find the function being called.  This means that a function can be passed as an argument to another function.  For example:
+
+```
+function add1(n) {
+  n+1;
+}
+function apply(f, x) {
+  f(x);
+}
+apply(add1, 42);
+```
+
+The result of this program is 43.
+
+# Examples, hints, advice, etc.
+
+TODO
+
+## Testing
+
+Tests can be found in the following repository: <https://github.com/jhucompilers/fall2020-tests>
+
+The tests are set up in a way that is very similar to [Assignment 1](assign01.html#testing).  Make sure you set the `ASSIGN02_DIR` environment variable to the directory containing your `interp` executable, e.g.
+
+```bash
+export ASSIGN02_DIR=$HOME/git/assign02
+```
+
+if the directory containing your code is in an `assign02` subdirectory of your `git` directory.
+
+Run a test using the `run_test.rb` script, e.g.
+
+```bash
+./run_test.rb arith01
+```
+
+You can run all of the test cases using the `run_all.rb` script, e.g.
+
+```bash
+./run_all.rb
+```
