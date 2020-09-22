@@ -5,6 +5,8 @@ title: "Assignment 1: Mini Calculator"
 
 Due: **Friday, Sept 18th** by 11pm
 
+Points: This assignment is worth 100 points
+
 # Overview
 
 In this assignment you will implement a mini calculator program which can evaluate infix
