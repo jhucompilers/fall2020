@@ -3,7 +3,7 @@ layout: default
 title: "Assignment 2: Interpreter"
 ---
 
-*This assignment description is somewhat preliminary, and is likely to be updated*
+*Updated Sep 29*: [description of error handling](#error-reporting), [requirements for 628 students](#additional-semantics-for-628-students)
 
 Due: **Friday, Oct 16th** by 11pm
 
@@ -236,7 +236,7 @@ The interpreter should support the following intrinsic functions.  These are ess
 
 It is an error to call an intrinsic function but pass an incorrect number of arguments.
 
-Note that the functions printing output should print to standard output.
+Note that the functions printing output should print to standard output (<code>stdout</code> or <code>std::cout</code>.)
 
 The `print` intrinsic takes one argument value, and prints the stringified representation of that value (as produced with `val_stringify`.)
 
@@ -250,9 +250,96 @@ All of the print functions return a `VAL_VOID` result value.
 
 The `readint` intrinsic takes no arguments, reads a single `long` value from standard input, and returns the input value as a `VAL_INT` value.
 
+## Additional semantics for 628 students
+
+If you are taking 601.628, then you need to implement an two additional data types, `VAL_CONS` and `VAL_NIL`, along with several intrinsic functions, and an enhancement to the `val_stringify` function.
+
+In a a `VAL_CONS` value, the `struct Value` instance's `cons` field will point to a dynamically allocated object whose type is `struct Cons`.  A `struct Cons` instance should have two fields that are instances of `struct Value`.  The suggested names for these fields are `car` and `cdr`.  So, your definition of `struct Cons` (in your interpreter implementation module, i.e. `interp.cpp`) might look like this:
+
+```c
+struct Cons {
+  struct Value car, cdr;
+};
+```
+
+This dynamically-allocated instance of `struct Cons` is called a *cons cell*.
+
+A `VAL_NIL` value has no data associated with it.  The only real requirement for `VAL_NIL` is that it is distinguishable from other types of values.
+
+Together, `VAL_CONS` and `VAL_NIL` values can can be used to represent arbitrary lists of values, as follows:
+
+* A `VAL_NIL` value represents an empty list
+* A `VAL_CONS` value represents a list, where its *car* value is the first element of the list, and its *cdr* value is a list containing the remaining elements
+
+In a "proper" list, the last cons cell in a list will have a `VAL_NIL` value as its *cdr*.
+
+You will need to implement the following intrinsic functions to work with `VAL_CONS` and `VAL_NIL` values.
+
+The `cons` intrinsic function takes two arguments, and returns a `VAL_CONS` value where the associated cons cell has the first argument value as its *cdr*, and the second argument value as its *car*.
+
+The `car` intrinsic function takes one argument, which must be a `VAL_CONS` value, and returns the associated cons cell's *car* value.
+
+The `cdr` intrinsic function takes one argument, which must be a `VAL_CONS` value, and returns the associated cons cell's *cdr* value.
+
+The `nil` intrinsic function takes no arguments, and returns a `VAL_NIL` value.
+
+The `nilp` ("nil predicate") function takes one argument, and returns a `VAL_INT` value of either 0 or 1, 0 if the argument is *not* a `VAL_NIL` value, 1 if the argument *is* a `VAL_NIL` value.
+
+The `list` intrinsic function takes 0 or more arguments, and returns a list containing the arguments as members, in order.
+
+In addition to implementing these intrinsic functions, you will need to enhance `val_stringify` to produce a textual representation of list values, as follows.
+
+By itself, a `VAL_NIL` value should be stringified as `()`.  So, the program
+
+```
+nil();
+```
+
+would produce the output
+
+```
+Result: ()
+```
+
+A `VAL_CONS` value that is the head of a chain of cons cells should be stringified in the form
+
+<div class="highlighter-rouge">
+<pre>
+(<i>members</i>)
+</pre>
+</div>
+
+where <i>members</i> is the textual representation of the *car* of each cons cell in the chain, separated by space characters. For example, the program
+
+```
+cons(1, cons(2, cons(3, nil())));
+```
+
+should produce the output
+
+```
+Result: (1 2 3)
+```
+
+As a special case, if the *cdr* of the last cons cell in the chain is not a `VAL_NIL` value, then the list is an "improper" list, and the characters "<code class="highlighter-rouge">&#32;.&#32;</code>" (space, dot, space) should be printed, then the last cdr value, then the closing right parenthesis.  For example, the program
+
+```
+cons(1, cons(2, 3));
+```
+
+should produce the output
+
+```
+Result: (1 2 . 3)
+```
+
+You may assume that the stringification of a list will require no more than 8,191 characters to represent.
+
+The [test repository](https://github.com/jhucompilers/fall2020-tests) has some test cases for list processing types and functions: `cons01`, `cons02`, etc.  See the [Testing](#testing) section.
+
 # Requirements
 
-This section details the functional requirements.
+This section details the functional requirements (on top of the requirements to implement the language according to the specifications above.)
 
 ## Invocation
 
@@ -264,15 +351,37 @@ Optionally, the program may support command line options preceding the program f
 
 Once a program has finished executing, the `interp` program should print a single line of output of the form
 
-<pre class="highlighter-rouge">
+<div class="highlighter-rouge">
+<pre>
 Result: <i>stringified value</i>
 </pre>
+</div>
 
 where <i>stringified value</i> is the result of calling the `val_stringify` function on the result value of the program.
 
 ## Error reporting
 
-Coming soon.
+All errors may be (and should be) considered as fatal errors the cause the interpreter to
+immediately print an error message and exit.  Error messages should be printed to
+<code>stderr</code>/<code>std::cerr</code> in the form
+
+<div class="highlighter-rouge">
+<pre>
+<i>filename</i>:<i>line</i>:<i>column</i>: Error: <i>error message</i>
+</pre>
+</div>
+
+where <i>filename</i> is the name of the file containing the program, <i>line</i> is the line number of the construct or operation that failed, and <i>column</i> is the column number.  Error messages must have *exactly* this format.  Note that the column number won't be checked by the test suite or the autograder, but your interpreter should produce an accurate line number.
+
+Examples of errors that should be reported:
+
+* references to undefined variable or functions (the must be defined before use)
+* redefinitions of variables or functions
+* runtime operations on values belonging to an inappropriate type: for example, applying the <code>+</code> operator to values that aren't both integers, calling a value that isn't a function, etc.
+* passing the wrong number of arguments to a function (either a user-defined function or an intrinsic function)
+* attempt to divide by 0
+
+**Note**: do not use the `VAL_ERROR` value type. All errors should be reported immediately, rather than propagating in the computation as error values.
 
 # Examples, hints, advice, etc.
 
