@@ -25,7 +25,7 @@ Wed, Sep 16 | LL(1) parsing: [slides](lectures/lecture05-public.pdf) | EaC 3.3
 Mon, Sep 21 | Parser generators, yacc/bison: [slides](lectures/lecture06-public.pdf) | F&amp;B Chapter 3
 Wed, Sep 23 | Bottom-up parsing: [slides](lectures/lecture07-public.pdf) | EaC 3.4
 Mon, Sep 28 | <b>Exam 1 out</b>, ASTs, Interpreters: [slides](lectures/lecture08-public.pdf) | 
-Wed, Sep 30 | Functions, scopes, environments, garbage collection
+Wed, Sep 30 | Interpreter runtime structures, [slides](lectures/lecture09-public.pdf) | 
 Mon, Oct 5 | <span class="tentative">Compilers, semantic analysis, types, symbol tables</span>
 Wed, Oct 7 | <span class="tentative">C programming language syntax and semantics</span>
 Mon, Oct 12 |<span class="tentative">Intermediate representations, control-flow graphs</span> 
