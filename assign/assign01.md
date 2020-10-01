@@ -19,7 +19,7 @@ nontrivial language.
 The grading criteria are as follows:
 
 * Packaging: 5%
-* Design and coding style: 10%
+* Design and coding style: 10% (see expectations for [design, coding style, and efficiency](design.html))
 * Functional requirements: 85%
 
 # Getting started

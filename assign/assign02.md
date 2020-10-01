@@ -3,7 +3,7 @@ layout: default
 title: "Assignment 2: Interpreter"
 ---
 
-*Updated 10/1*: properly distinguish the `println` intrinsic from the `printnl` intrinsic, clarify that garbage collection of cons cells isn't necessary
+*Updated 10/1*: properly distinguish the `println` intrinsic from the `printnl` intrinsic, clarify that garbage collection of cons cells isn't necessary; also added grading criteria and design/coding style/efficiency expectations
 
 *Updated Sep 29*: [description of error handling](#error-reporting), [requirements for 628 students](#additional-semantics-for-628-students)
 
@@ -18,7 +18,11 @@ language based on the calculator language from [Assignment 1](assign01.html).
 
 ## Grading criteria
 
-Coming soon
+The grading criteria are as follows:
+
+* Packaging: 5%
+* Design and coding style: 10% (see expectations for [design, coding style, and efficiency](design.html))
+* Functional requirements: 85%
 
 # Getting started
 
