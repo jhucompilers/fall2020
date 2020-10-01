@@ -25,16 +25,16 @@ Wed, Sep 16 | LL(1) parsing: [slides](lectures/lecture05-public.pdf) | EaC 3.3
 Mon, Sep 21 | Parser generators, yacc/bison: [slides](lectures/lecture06-public.pdf) | F&amp;B Chapter 3
 Wed, Sep 23 | Bottom-up parsing: [slides](lectures/lecture07-public.pdf) | EaC 3.4
 Mon, Sep 28 | <b>Exam 1 out</b>, ASTs, Interpreters: [slides](lectures/lecture08-public.pdf) | 
-Wed, Sep 30 | Interpreter runtime structures, [slides](lectures/lecture09-public.pdf) | 
-Mon, Oct 5 | <span class="tentative">Compilers, semantic analysis, types, symbol tables</span>
-Wed, Oct 7 | <span class="tentative">C programming language syntax and semantics</span>
-Mon, Oct 12 |<span class="tentative">Intermediate representations, control-flow graphs</span> 
-Wed, Oct 14 | <span class="tentative">High-level code generation</span>
-Mon, Oct 19 | <span class="tentative">Low-level code generation, x86-64 assembly language</span>
-Wed, Oct 21 | <span class="tentative">Control flow</span>
-Mon, Oct 26 | <span class="tentative">Procedures</span>
-Wed, Oct 28 | <span class="tentative">Peephole optimization</span>
-Mon, Nov 2 | 
+Wed, Sep 30 | Interpreter runtime structures: [slides](lectures/lecture09-public.pdf) | 
+Mon, Oct 5 | Context-sensitive analysis, attribute grammars: [slides](lectures/Context_sensitive_Analysis_I.pdf) | EaC 4.1–4.3
+Wed, Oct 7 | Context-sensitive analysis, ad-hoc techniques: [slides](lectures/Context_sensitive_Analysis_II.pdf) | EaC 4.4
+Mon, Oct 12 | <span class="tentative">Compiler project intro, ASTs and symbol tables</span> |
+Wed, Oct 14 | <span class="tentative">Intermediate representations</span> | 
+Mon, Oct 19 | <span class="tentative">High-level code generation</span>
+Wed, Oct 21 | <span class="tentative">Low-level code generation, x86-64 assembly language</span>
+Mon, Oct 26 | <span class="tentative">Control flow</span>  
+Wed, Oct 28 | <span class="tentative">Procedures</span>
+Mon, Nov 2 | <span class="tentative">Peephole optimization</span>
 Wed, Nov 4 | 
 Mon, Nov 9 | 
 Wed, Nov 11 | 
