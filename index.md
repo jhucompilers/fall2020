@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Oct 1** — [Assignment 2](assign/assign02.html) has been updated with some clarifications.
 * **Sep 29** — [Assignment 2](assign/assign02.html) has been updated to describe error handling expectations and requirments for students taking 601.628.
 * **Sep 28** — **Exam 1** is out (on the Piazza resources page), and is due on Gradescope by **Wednesday, Sept 30** by 3pm.
 * **Sep 22** — [Assignment 2](assign/assign02.html) has been posted, due **Friday, October 16th** by 11pm.

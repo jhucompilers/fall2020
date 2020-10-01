@@ -3,6 +3,8 @@ layout: default
 title: "Assignment 2: Interpreter"
 ---
 
+*Updated 10/1*: properly distinguish the `println` intrinsic from the `printnl` intrinsic, clarify that garbage collection of cons cells isn't necessary
+
 *Updated Sep 29*: [description of error handling](#error-reporting), [requirements for 628 students](#additional-semantics-for-628-students)
 
 Due: **Friday, Oct 16th** by 11pm
@@ -244,7 +246,7 @@ The `println` intrinsic takes one argument value, prints it (the same way as the
 
 The `printspace` intrinsic takes no arguments, and prints a single space character.
 
-The `println` intrinsic takes no arguments, and prints a single newline (`'\n'`) character.
+The `printnl` intrinsic takes no arguments, and prints a single newline (`'\n'`) character.
 
 All of the print functions return a `VAL_VOID` result value.
 
@@ -262,7 +264,7 @@ struct Cons {
 };
 ```
 
-This dynamically-allocated instance of `struct Cons` is called a *cons cell*.
+This dynamically-allocated instance of `struct Cons` is called a *cons cell*.  **Important**: your interpreter does *not* need to keep track of dynamically allocated cons cells so that their memory can be reclaimed when they are no longer in use.  In other words, you do not need to implement a reference counting or garbage collecting scheme.  It is fine to just leak them.
 
 A `VAL_NIL` value has no data associated with it.  The only real requirement for `VAL_NIL` is that it is distinguishable from other types of values.
 
