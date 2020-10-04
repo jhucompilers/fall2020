@@ -41,6 +41,10 @@ TODO
 
 TODO
 
+## Semantics, type checking
+
+TODO
+
 # Hints, specifications, and advice
 
 ## Approach
