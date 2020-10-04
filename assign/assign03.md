@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Assignment 2: Compiler front end, semantic analysis"
+title: "Assignment 3: Compiler front end, semantic analysis"
 ---
 
 *Preliminary assignment description, not official yet*
