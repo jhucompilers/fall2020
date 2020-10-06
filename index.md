@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Oct 6** — [Assignment 2](assign/assign02.html) has been updated with an improved version of [scan\_grammar\_symbols.rb](assign/assign02/scan_grammar_symbols.rb), which allows `%token` directives to specify arbitrary `%union` fields.
 * **Oct 1** — The [Schedule](schedule.html) has been updated with topics and readings for next week.
 * **Oct 1** — [Assignment 2](assign/assign02.html) has been updated with some clarifications.
 * **Sep 29** — [Assignment 2](assign/assign02.html) has been updated to describe error handling expectations and requirments for students taking 601.628.

@@ -3,6 +3,8 @@ layout: default
 title: "Assignment 2: Interpreter"
 ---
 
+*Updated 10/6*: improved version of [scan\_grammar\_symbols.rb](assign02/scan_grammar_symbols.rb) is available
+
 *Updated 10/1*: properly distinguish the `println` intrinsic from the `printnl` intrinsic, clarify that garbage collection of cons cells isn't necessary; also added grading criteria and design/coding style/efficiency expectations
 
 *Updated Sep 29*: [description of error handling](#error-reporting), [requirements for 628 students](#additional-semantics-for-628-students)
