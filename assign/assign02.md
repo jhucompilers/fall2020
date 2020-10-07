@@ -3,6 +3,8 @@ layout: default
 title: "Assignment 2: Interpreter"
 ---
 
+*Update 10/7*: mention that a *statement-list* is a sequence of 0 or more *statement*s
+
 *Updated 10/6*: improved version of [scan\_grammar\_symbols.rb](assign02/scan_grammar_symbols.rb) is available
 
 *Updated 10/1*: properly distinguish the `println` intrinsic from the `printnl` intrinsic, clarify that garbage collection of cons cells isn't necessary; also added grading criteria and design/coding style/efficiency expectations
@@ -79,6 +81,8 @@ There are several kinds of *statement*s:
 * An *if-statement* has the form <code class="highlighter-rouge">if (<i>condition</i>) { <i>statement-list</i> }</code>
 * An *if-else-statement* has the form <code class="highlighter-rouge">if (<i>condition</i>) { <i>statement-list</i> } else { <i>statement-list</i> }</code>
 * A *while-statement* has the form <code class="highlighter-rouge">while (<i>condition</i>) { <i>statement-list</i> }</code>
+
+A *statement-list* is a sequence of 0 or more *statement*s.
 
 A *function* has the form <code class="highlighter-rouge">function <i>identifier</i>(<i>opt-parameter-list</i>) { <i>statement-list</i> }</code>.  An *opt-parameter-list* is a comma-separated sequence of zero or more identifiers.
 
