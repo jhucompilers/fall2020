@@ -3,7 +3,7 @@ layout: default
 title: "Schedule"
 ---
 
-This page lists lecture topics and readings.
+This page lists lecture topics, readings, and exam dates.
 
 The links to slides are provided for reference.  In general, there is no guarantee that they will be posted before class, or that their content will not change.
 
@@ -15,7 +15,7 @@ Readings:
 *Note*: The schedule will become more concrete as the semester progresses. Expect it to be updated frequently.  Tentative topics are marked <span class="tentative">in a lighter italic font</span>: expect these to change.
 
 Date               | Topic/Slides | Reading
------------------- | ------------ | ------------
+:----------------: | ------------ | ------------
 Mon, Aug 31 | Course intro, lexical analysis: [slides](lectures/lecture01-public.pdf)
 Wed, Sep 2 | Context free grammars, parse trees, ambiguity, recursive descent parsing: [slides](lectures/lecture02-public.pdf) | EaC 3.1–3.2
 Mon, Sep 7 | *Holiday, no class*
@@ -28,17 +28,17 @@ Mon, Sep 28 | <b>Exam 1 out</b>, ASTs, Interpreters: [slides](lectures/lecture08
 Wed, Sep 30 | Interpreter runtime structures: [slides](lectures/lecture09-public.pdf) | 
 Mon, Oct 5 | Context-sensitive analysis, attribute grammars: [slides](lectures/Context_sensitive_Analysis_I.pdf) | EaC 4.1–4.3
 Wed, Oct 7 | Context-sensitive analysis, ad-hoc techniques: [slides](lectures/Context_sensitive_Analysis_II.pdf) | EaC 4.4
-Mon, Oct 12 | <span class="tentative">Compiler project intro, ASTs and symbol tables</span> |
-Wed, Oct 14 | <span class="tentative">Intermediate representations</span> | 
+Mon, Oct 12 | Compiler project intro, ASTs and symbol tables | EaC 5.5
+Wed, Oct 14 | Intermediate representations: [slides](lectures/Intermediate_Representations.pdf) | EaC 5.1–5.4
 Mon, Oct 19 | <span class="tentative">High-level code generation</span>
 Wed, Oct 21 | <span class="tentative">Low-level code generation, x86-64 assembly language</span>
-Mon, Oct 26 | <span class="tentative">Control flow</span>  
+Mon, Oct 26 | <b>Exam 2 out</b>, <span class="tentative">Control flow</span>  
 Wed, Oct 28 | <span class="tentative">Procedures</span>
 Mon, Nov 2 | <span class="tentative">Peephole optimization</span>
 Wed, Nov 4 | 
 Mon, Nov 9 | 
 Wed, Nov 11 | 
-Mon, Nov 16 | 
+Mon, Nov 16 | <b>Exam 3 out</b>
 Wed, Nov 18 | 
 Mon, Nov 23 | *Thanksgiving break*
 Wed, Nov 25 | *Thanksgiving break*
@@ -46,3 +46,4 @@ Mon, Nov 30 |
 Wed, Dec 2 | 
 Mon, Dec 7 | 
 Mon, Dec 9 | 
+—          | <b>Exam 4</b> will be due during the final exam period
