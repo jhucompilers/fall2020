@@ -3,6 +3,8 @@ layout: default
 title: "Assignment 2: Interpreter"
 ---
 
+*Update 10/8*: fixed description of `cons` intrinsic function
+
 *Update 10/7*: mention that a *statement-list* is a sequence of 0 or more *statement*s
 
 *Updated 10/6*: improved version of [scan\_grammar\_symbols.rb](assign02/scan_grammar_symbols.rb) is available
@@ -287,7 +289,7 @@ In a "proper" list, the last cons cell in a list will have a `VAL_NIL` value as 
 
 You will need to implement the following intrinsic functions to work with `VAL_CONS` and `VAL_NIL` values.
 
-The `cons` intrinsic function takes two arguments, and returns a `VAL_CONS` value where the associated cons cell has the first argument value as its *cdr*, and the second argument value as its *car*.
+The `cons` intrinsic function takes two arguments, and returns a `VAL_CONS` value where the associated cons cell has the first argument value as its *car*, and the second argument value as its *cdr*.
 
 The `car` intrinsic function takes one argument, which must be a `VAL_CONS` value, and returns the associated cons cell's *car* value.
 
