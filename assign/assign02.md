@@ -3,6 +3,8 @@ layout: default
 title: "Assignment 2: Interpreter"
 ---
 
+*Update 10/11*: updated [Submitting](#submitting) section to indicate that `scan_grammar_symbols.rb` should be submitted (if used)
+
 *Update 10/8*: fixed description of `cons` intrinsic function
 
 *Update 10/7*: mention that a *statement-list* is a sequence of 0 or more *statement*s
@@ -488,9 +490,9 @@ To submit, create a zipfile containing all of the files needed to compile your p
 
 ```bash
 make clean
-zip -9r solution.zip Makefile *.h *.c *.y *.l *.cpp
+zip -9r solution.zip Makefile *.h *.c *.y *.l *.cpp *.rb
 ```
 
-The suggested command would create a zipfile called `solution.zip`.  Note that if your solution uses C exclusively, you can omit `*.cpp` from the filename patterns.
+The suggested command would create a zipfile called `solution.zip`.  Note that if your solution uses C exclusively, you can omit `*.cpp` from the filename patterns.  If you used the `scan_grammar_symbols.rb` script, them make sure you include the `*.rb` pattern as shown above.
 
 Upload your submission to [Gradescope](https://www.gradescope.com).  If you are registered for 602.428, upload to **Assign02&#95;428**.  If you are registered for 602.628, upload to **Assign02&#95;628**.
