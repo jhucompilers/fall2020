@@ -28,7 +28,7 @@ Mon, Sep 28 | <b>Exam 1 out</b>, ASTs, Interpreters: [slides](lectures/lecture08
 Wed, Sep 30 | Interpreter runtime structures: [slides](lectures/lecture09-public.pdf) | 
 Mon, Oct 5 | Context-sensitive analysis, attribute grammars: [slides](lectures/Context_sensitive_Analysis_I.pdf) | EaC 4.1–4.3
 Wed, Oct 7 | Context-sensitive analysis, ad-hoc techniques: [slides](lectures/Context_sensitive_Analysis_II.pdf) | EaC 4.4
-Mon, Oct 12 | Compiler project intro, ASTs and symbol tables | EaC 5.5
+Mon, Oct 12 | Compiler project intro, ASTs and symbol tables: [slides](lectures/lecture12-public.pdf) | EaC 5.5
 Wed, Oct 14 | Intermediate representations: [slides](lectures/Intermediate_Representations.pdf) | EaC 5.1–5.4
 Mon, Oct 19 | <span class="tentative">High-level code generation</span>
 Wed, Oct 21 | <span class="tentative">Low-level code generation, x86-64 assembly language</span>
