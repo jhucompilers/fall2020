@@ -222,6 +222,27 @@ Rough outline:
 * Implement a traversal of the AST to build symbol table entries
 * Implement a traversal of the AST to do type checking
 
+## Testing
+
+Tests can be found in the following repository: <https://github.com/jhucompilers/fall2020-tests>, in the `assign03` subdirectory.
+
+Set the `ASSIGN03_DIR` environment variable to the name of the directory containing your project.  For example, if your project is in the `git/assign03` subdirectory of your home directory, use the command
+
+```bash
+export ASSIGN03_DIR=$HOME/git/assign03
+```
+
+TOOD: more information about available tests, running them.
+
 # Submitting
 
-TODO
+To submit, create a zipfile containing all of the files needed to compile your program.  Suggested commands:
+
+```bash
+make clean
+zip -9r solution.zip Makefile *.h *.c *.y *.l *.cpp *.rb
+```
+
+The suggested command would create a zipfile called `solution.zip`.  Note that if your solution uses C exclusively, you can omit `*.cpp` from the filename patterns.  If you used the `scan_grammar_symbols.rb` script, them make sure you include the `*.rb` pattern as shown above.
+
+Upload your submission to [Gradescope](https://www.gradescope.com).  If you are registered for 601.428, upload to **Assign03&#95;428**.  If you are registered for 601.628, upload to **Assign03&#95;628**.
