@@ -35,11 +35,60 @@ TODO
 
 ## Lexical structure
 
-TODO
+The language has the following kinds of tokens:
+
+* Keywords: `PROGRAM` `BEGIN` `END` `CONST` `TYPE` `VAR` `ARRAY` `OF` `RECORD` `IF` `THEN` `ELSE` `REPEAT` `UNTIL` `WHILE` `DO` `READ` `WRITE`
+* Operators: `:=` `=` `+` `-` `*` `DIV` `MOD` `#` `<` `>` `<=` `:=`
+* Brackets/grouping: `(` `)` `[` `]`
+* Misc/punctuation:  `:` `;` `.`
+* Identifers: a letter or underscore (`_`), followed by 0 or more letters, underscores, and/or digits
+* Integer literals: a sequence of one or more digit characters
+
+Tokens may be separated by whitespace.
 
 ## Syntax
 
-TODO
+The overall input is a *program*, which has the form
+
+<div class="highlighter-rouge"><pre>
+PROGRAM <i>identifier</i> ; <i>opt-declarations</i> BEGIN <i>opt-instructions</i> END .
+</pre></div>
+
+*opt-declarations* is a sequence of 0 or more *declaration*s.
+
+*opt-instructions* is a sequence of 0 or more *instruction*s.
+
+A *declaration* is a *const-declaration*, *var-declaration*, or *type-declaration*.
+
+A *const-declaration* has the form
+
+<div class="highlighter-rouge"><pre>
+CONST <i>const-definitions</i>
+</pre></div>
+
+*const-definitions* is a list of one or more *const-definition*.
+
+A *const-definition* has the form
+
+<div class="highlighter-rouge"><pre>
+<i>identifier</i> = <i>expression</i> ;
+</pre></div>
+
+A *var-declaration* has the form
+
+<div class="highlighter-rouge"><pre>
+VAR <i>var-definitions</i>
+</pre></div>
+
+*var-definitions* is a list of one or more *var-definition*.
+
+A *var-definition* has the form
+
+<div class="highlighter-rouge"><pre>
+<i>identifier-list</i> : <i>type</i> ;
+</pre></div>
+
+An *identifier-list* is a list of 1 or more identifiers, separated by commas (`,`).
 
 ## Semantics, type checking
 
