@@ -3,7 +3,7 @@ layout: default
 title: "Assignment 3: Compiler front end, semantic analysis"
 ---
 
-*Preliminary assignment description, not official yet*
+*This assignment description is fairly complete, but is likely to be updated with additional information*
 
 **Due**: TBD
 
@@ -227,7 +227,52 @@ An <i>expression-list</i> is a sequence of one or more *expression*s, separated 
 
 ## Semantics, type checking
 
-TODO
+The source language is a [Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language))-like
+imperative programming language.
+
+There are two primitive data types, `INTEGER` and `CHAR`. These are the *integral* types.
+
+The two kinds of composite data types are arrays and records.  An array type specifies an integer size and an element type, which can be an arbitrary type.  A record type consists of fields, each of which has a name and type.
+
+The operands of numeric operators (`+`, `-`, `*`, `DIV`, etc.) must be integral.  Mixed type expressions (consisting of one `INTEGER` and one `CHAR`) are allowed, and the result of a mixed type expression is `INTEGER`.  For non-mixed expressions, the result type is the same as the operand types.
+
+The operands of comparison operators (`<`, `>`, etc.) must be integral.
+
+Integer literals have type `INTEGER`.
+
+Variable references have the type specified by the corresponding variable declaration.
+
+For an array subscript reference, the designator must have an array type, and the expression(s) designating the index(es) must have an integral type (`INTEGER` or `CHAR`.) The type of the subscript reference is the array type's element type.
+
+For a field reference, the designator must have a record type, and the type of the field reference is the type of the field named by the identifier on the right hand side of the `.`.
+
+`WRITE` statements are used for output, and the expression specifying the value to output must be either `INTEGER`, `CHAR`, or array of `CHAR` (any length).
+
+`READ` statements are used for input, and the designator specifying the variable where the input should be stored must be either `INTEGER`, `CHAR`, or array of `CHAR`.
+
+## Errors
+
+Your compiler must do semantic analysis of the input to ensure that each name used in the program refers to a valid type or variable, that array element and field references refer are valid, and that the type rules are followed.
+
+If a semantic error is found, the compiler should print (to `stderr` or `std::cerr`) a message of the form
+
+<div class="highlighter-rouge"><pre>
+<i>sourcefile</i>:<i>line</i>:<i>col</i>: Error: <i>message</i>
+</pre></div>
+
+where <i>sourcefile</i> is the name of the input file, <i>line</i> is the source line number of the invalid construct, and <i>col</i> is the source column number of the invalid construct.
+
+Examples of errors that should be reported include:
+
+* Use of a named type that is not defined
+* Use of an undefined variable
+* Attempt to use the array subscript operator on something that is not an array
+* Using a non-integral value as an array index
+* Attempting to access a field of something that is not a record type
+* Attempting to access a nonexistent field of a record
+* Using a non-integral value as an operand to a binary operator
+* Using a non-constant value in a constant expression (e.g., in a `CONST` declaration or as an array size)
+* Attempting a division by 0 (either using `DIV` or `MOD`) in a constant expression
 
 # Hints, specifications, and advice
 
