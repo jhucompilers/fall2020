@@ -54,7 +54,7 @@ The language has the following kinds of tokens:
 * Keywords: `PROGRAM` `BEGIN` `END` `CONST` `TYPE` `VAR` `ARRAY` `OF` `RECORD` `IF` `THEN` `ELSE` `REPEAT` `UNTIL` `WHILE` `DO` `READ` `WRITE`
 * Operators: `:=` `=` `+` `-` `*` `DIV` `MOD` `#` `<` `>` `<=` `:=`
 * Brackets/grouping: `(` `)` `[` `]`
-* Misc/punctuation:  `:` `;` `.`
+* Misc/punctuation:  `:` `;` `.` `,`
 * Identifers: a letter or underscore (`_`), followed by 0 or more letters, underscores, and/or digits
 * Integer literals: a sequence of one or more digit characters
 * Comments: start with `--` and continue to the end of the source line
