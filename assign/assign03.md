@@ -273,6 +273,46 @@ Examples of errors that should be reported include:
 * Using a non-integral value as an operand to a binary operator
 * Using a non-constant value in a constant expression (e.g., in a `CONST` declaration or as an array size)
 * Attempting a division by 0 (either using `DIV` or `MOD`) in a constant expression
+* The expression in a `WRITE` statement has an inappropriate type
+* The designator in a `READ` statement has an inappropriate type
+
+## Running the program, dumping symbol table information
+
+The `compiler` executable is invoked using a command of the form
+
+<div class="highlighter-rouge"><pre>
+./compiler [<i>option</i>] <i>filename</i>
+</pre></div>
+
+where <i>filename</i> is the input program.  There is one required <i>option</i> that must be supported, which is `-s`.  When this option is used, then the program should print out information about symbol table entries as they are added to the symbol tables.  Each symbol table entry should be output as a single line, in the form
+
+<div class="highlighter-rouge"><pre>
+<i>depth</i>,<i>symkind</i>,<i>name</i>,<i>type</i>
+</pre></div>
+
+<i>depth</i> is the lexical depth of the symbol table entry, with 0 being an entry in the symbol table representing the global scope, and higher numbers representing nested scopes.  Note that the only kind of nested scope is a `RECORD` type.
+
+<i>symkind</i> is one of `VAR`, `TYPE`, or `CONST`, corresponding to variable definitions, type definitions, and constant definitions.
+
+<i>name</i> is the identifier naming the entity represented by the symbol table entry.
+
+<i>type</i> is a textual representation of the data type associated with the symbol table entry: for example, if the entry is for a variable, then <i>type</i> represents the variable's data type.  Types should be represented textually as follows:
+
+* Primitive types (`INTEGER` and `CHAR`) should be represented by name
+* Array types should be represented in the form <code class="highlighter-rouge">ARRAY <i>size</i> OF <i>eltype</i></code>, where <i>size</i> is the size of the array and <i>eltype</i> is the textual representation of the element type
+* Record types should be represented in the form <code class="highlighter-rouge">RECORD (<i>field1</i> x <i>field2</i> x <i>...</i>)</code> where <i>field1</i> is the representation of the first field's data type, <i>field2</i> is the representation of the second field's data type, etc.
+
+As an example, here is an example of the expected output for the [input/record01.in](https://github.com/jhucompilers/fall2020-tests/blob/master/assign03/input/record01.in) example input in the tests repository (user input in **bold**):
+
+<div class="highlighter-rouge"><pre>
+$ <b>./compiler -s input/record01.in</b>
+1,VAR,name,ARRAY 10 OF CHAR
+1,VAR,age,INTEGER
+0,TYPE,Person,RECORD (ARRAY 10 OF CHAR x INTEGER)
+0,VAR,p,RECORD (ARRAY 10 OF CHAR x INTEGER)
+</pre></div>
+
+The expected order of the printed symbol table entries corresponds to the order in which definitions appear in the source code.  If your symbol table builder uses a general in-order traversal of the AST, this is the natural order in which it will encounter definitions to add to the symbol tables.
 
 # Hints, specifications, and advice
 
@@ -284,6 +324,12 @@ Rough outline:
 * Add semantic actions in the parser to build an AST
 * Create an object-based representation of types
 * Implement a traversal of the AST to build symbol table entries and do type checking
+
+Some recommendations to make this assignment fairly straightforward:
+
+* Have the parser (`parse.y`) build an AST directly from the source (i.e., don't bother to build a parse tree)
+* Implement `SymbolTable`, `Symbol`, and `Type` classes following the approach we discussed in [Lecture 12](../lectures/lecture12-public.pdf) (see Piazza Resources page for annotated slides with design sketches)
+* Use a visitor to build symbol tables, annotate AST nodes with symbol table entries and type, and perform type checking (again, following the approach from Lecture 12)
 
 ## Testing
 
