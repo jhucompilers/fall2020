@@ -1,11 +1,9 @@
 ---
 layout: default
-title: "Assignment 3: Compiler front end, semantic analysis"
+title: "Assignment 3: Semantic analysis"
 ---
 
-*This assignment description is fairly complete, but is likely to be updated with additional information*
-
-**Due**: TBD
+**Due**: Friday, Oct 30th by 11pm
 
 Points: This assignment is worth 150 points
 
@@ -314,6 +312,27 @@ $ <b>./compiler -s input/record01.in</b>
 
 The expected order of the printed symbol table entries corresponds to the order in which definitions appear in the source code.  If your symbol table builder uses a general in-order traversal of the AST, this is the natural order in which it will encounter definitions to add to the symbol tables.
 
+## Multidimensional arrays, requirements for 428 vs. 628
+
+If you are taking 601.428, then your compiler does not need to handle multidimensional arrays. You may make simplifying assumptions based on the expectation that your compiler won't ever encounter a program that declares a multidimensional arrays or which uses multiple subscripts in an array element reference.
+
+If you are taking 601.628, then your compiler *must* properly handle programs with multidimensional arrays.
+
+For example, the following is a valid program (for 628 students!):
+
+```
+PROGRAM multidim;
+  TYPE Grid = ARRAY 10 OF ARRAY 10 OF INTEGER;
+  VAR mygrid : Grid;
+
+BEGIN
+  mygrid[0][0] := 2;
+  mygrid[1, 1] := 3;
+END.
+```
+
+Note that both assignments in the program above show valid ways to refer to an element of a multidimensional array.
+
 # Hints, specifications, and advice
 
 ## Approach
@@ -341,7 +360,21 @@ Set the `ASSIGN03_DIR` environment variable to the name of the directory contain
 export ASSIGN03_DIR=$HOME/git/assign03
 ```
 
-TOOD: more information about available tests, running them.
+To run a test:
+
+<div class="highlighter-rouge"><pre>
+./run&#95;test.rb <i>testname</i>
+</pre></div>
+
+where <i>testname</i> is one of the tests, e.g., <code>arith01.in</code>.
+
+To run all of the tests:
+
+<div class="highlighter-rouge"><pre>
+./run&#95;all.rb
+</pre></div>
+
+As with previous assignments, we encourage you to contribute your own tests to the repository.  See the [Testing section of Assignment 2](assign02.html#testing) for details regarding how to contribute additional tests.
 
 # Submitting
 
