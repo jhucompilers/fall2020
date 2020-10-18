@@ -57,6 +57,7 @@ The language has the following kinds of tokens:
 * Misc/punctuation:  `:` `;` `.`
 * Identifers: a letter or underscore (`_`), followed by 0 or more letters, underscores, and/or digits
 * Integer literals: a sequence of one or more digit characters
+* Comments: start with `--` and continue to the end of the source line
 
 Tokens may be separated by whitespace.
 
