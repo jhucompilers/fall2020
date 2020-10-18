@@ -25,11 +25,27 @@ are both heavily inspired by/stolen from
 
 ## Grading criteria
 
-TODO
+The grading criteria are as follows:
+
+* Packaging: 5%
+* Design and coding style: 10% (see expectations for [design, coding style, and efficiency](design.html))
+* Functional requirements: 85%
 
 # Getting started
 
-TODO
+Download [assign03.zip](assign03.zip).
+
+The starter code is similar to that provided for [Assignment 2](assign02.html), but note that there are some significant changes:
+
+* A lexical analyzer (`lex.l`) is provided; you will just need to implement a parser (`parse.y`)
+* The `Node` type is now a C++ class, fully defined in the `node.h` header file; the C functions used in previous assignments are provided for backwards-compatilibility
+* The `Node` type has some commented-out code showing one possible way of allowing AST nodes to be annotated with a symbol table entry (pointer to `Symbol`) or a type (pointer to `Type`)
+* The `ast.h` and `ast.cpp` source files show a reasonable way to implement ASTs for the source language, and include support for printing ASTs textually or in [graphviz](https://graphviz.org/) format
+* The `astvisitor.h` and `astvisitor.cpp` source files implement the visitor design pattern for ASTs
+* The `context.h` and `context.cpp` source files are intended to collect all of the data structures used in the compilation process
+* The main function is now in a C++ module, `main.cpp`, and has support for handling command line options (you can probably use this as-is)
+
+Note that you may freely use any of the starter code, but you are not obligated to use it, and you are free to make any changes that you feel would be helpful.  For example, if you would like to use different AST node types, you can modify `ast.h`/`ast.cpp` and `astvisitor.h`/`astvisitor.cpp`.
 
 # Language specification
 
@@ -197,12 +213,15 @@ A *designator* has one of the following forms:
 </pre></div>
 
 <div class="highlighter-rouge"><pre>
-<i>identifier</i> [ <i>expression-list</i> ]
+<i>designator</i> [ <i>expression-list</i> ]
 </pre></div>
 
 <div class="highlighter-rouge"><pre>
-<i>identifier</i> . <i>identifier</i>
+<i>designator</i> . <i>identifier</i>
 </pre></div>
+
+These three forms of designators correspond to variable references, array element
+references, and record field references, respectively.
 
 An <i>expression-list</i> is a sequence of one or more *expression*s, separated by commas (`,`).
 
@@ -219,8 +238,7 @@ Rough outline:
 * Implement lexical analyzer and parser using flex and bison
 * Add semantic actions in the parser to build an AST
 * Create an object-based representation of types
-* Implement a traversal of the AST to build symbol table entries
-* Implement a traversal of the AST to do type checking
+* Implement a traversal of the AST to build symbol table entries and do type checking
 
 ## Testing
 
