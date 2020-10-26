@@ -14,8 +14,8 @@ Readings:
 
 *Note*: The schedule will become more concrete as the semester progresses. Expect it to be updated frequently.  Tentative topics are marked <span class="tentative">in a lighter italic font</span>: expect these to change.
 
-Date               | Topic/Slides | Reading
-:----------------: | ------------ | ------------
+Date               | Topic/Slides | Reading      | Assignment
+:----------------: | ------------ | ------------ | ----------
 Mon, Aug 31 | Course intro, lexical analysis: [slides](lectures/lecture01-public.pdf)
 Wed, Sep 2 | Context free grammars, parse trees, ambiguity, recursive descent parsing: [slides](lectures/lecture02-public.pdf) | EaC 3.1–3.2
 Mon, Sep 7 | *Holiday, no class*
@@ -32,8 +32,8 @@ Mon, Oct 12 | Compiler project intro, ASTs and symbol tables: [slides](lectures/
 Wed, Oct 14 | Intermediate representations: [slides](lectures/Intermediate_Representations.pdf) | EaC 5.1–5.4 | [A2](assign/assign02.html) due 10/16
 Mon, Oct 19 | AST visitors, symbol tables, the procedure abstraction: [slides](lectures/The_Procedure_Abstraction_I.pdf) | EaC Chapter 6
 Wed, Oct 21 | Code shape for expressions: [slides](/lectures/Code_Shape_I_Quick_Intro_to_Code_Generation_+_Code_Shape_for_Expressions.pdf) | EaC 7.1–7.4
-Mon, Oct 26 | <b>Exam 2 out</b>
-Wed, Oct 28 | <span class="tentative">Low-level code generation, x86-64 assembly language</span>
+Mon, Oct 26 | <b>Exam 2 out</b>, x86-64 assembly language, code generation: [slides](lectures/lecture16-public.pdf) | 
+Wed, Oct 28 | Arrays and strings, boolean and relational expressions: [slides](lectures/Code_Shape_II_Arrays_Aggregates_&_Strings.pdf), [slides](lectures/Code_Shape_III_Boolean_and_Relational_Expressions_+_Control_Flow.pdf) | EaC 7.5–7.8
 Mon, Nov 2 | <span class="tentative">Control flow</span>  | | [A3](assign/assign03.html) due 10/30
 Wed, Nov 4 | <span class="tentative">Procedures</span>
 Mon, Nov 9 | <span class="tentative">Peephole optimization</span>
