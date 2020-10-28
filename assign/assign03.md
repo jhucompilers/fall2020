@@ -5,6 +5,8 @@ title: "Assignment 3: Semantic analysis"
 
 *Update 10/28*: clarified semantics of assignments; see [Semantics, type checking](#semantics-type-checking)
 
+*Update 10/28*: updated [Semantics](#semantics-type-checking) to indicate that within a scope, a name may refer to only one thing (variable, constant, or type)
+
 **Due**: Friday, Oct 30th by 11pm
 
 Points: This assignment is worth 150 points
@@ -234,6 +236,22 @@ imperative programming language.
 There are two primitive data types, `INTEGER` and `CHAR`. These are the *integral* types.
 
 The two kinds of composite data types are arrays and records.  An array type specifies an integer size and an element type, which can be an arbitrary type.  A record type consists of fields, each of which has a name and type.
+
+Within a lexical scope in the program, a name may only refer to a single variable, constant, or type.  For example, the program:
+
+```
+PROGRAM names;
+  TYPE a = INTEGER;
+  VAR a : ARRAY 10 OF CHAR;
+
+BEGIN
+  READ a;
+END.
+```
+
+is not legal because the name `a`, originally referring to a type, is reused to name a variable.
+
+`RECORD` types are a lexical scope distinct from the enclosing scope, so it is legal for field names to shadow names used in the outer scope.
 
 The operands of numeric operators (`+`, `-`, `*`, `DIV`, etc.) must be integral.  Mixed type expressions (consisting of one `INTEGER` and one `CHAR`) are allowed, and the result of a mixed type expression is `INTEGER`.  For non-mixed expressions, the result type is the same as the operand types.
 
