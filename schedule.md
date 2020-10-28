@@ -33,8 +33,8 @@ Wed, Oct 14 | Intermediate representations: [slides](lectures/Intermediate_Repre
 Mon, Oct 19 | AST visitors, symbol tables, the procedure abstraction: [slides](lectures/The_Procedure_Abstraction_I.pdf) | EaC Chapter 6
 Wed, Oct 21 | Code shape for expressions: [slides](/lectures/Code_Shape_I_Quick_Intro_to_Code_Generation_+_Code_Shape_for_Expressions.pdf) | EaC 7.1–7.4
 Mon, Oct 26 | <b>Exam 2 out</b>, x86-64 assembly language, code generation: [slides](lectures/lecture16-public.pdf) | 
-Wed, Oct 28 | Arrays and strings, boolean and relational expressions: [slides](lectures/Code_Shape_II_Arrays_Aggregates_&_Strings.pdf), [slides](lectures/Code_Shape_III_Boolean_and_Relational_Expressions_+_Control_Flow.pdf) | EaC 7.5–7.8
-Mon, Nov 2 | <span class="tentative">Control flow</span>  | | [A3](assign/assign03.html) due 10/30
+Wed, Oct 28 | Arrays and strings, boolean and relational expressions: [slides](lectures/Code_Shape_II_Arrays_Aggregates_&_Strings.pdf), [slides](lectures/Code_Shape_III_Boolean_and_Relational_Expressions_+_Control_Flow.pdf) | EaC 7.5–7.8 | [A3](assign/assign03.html) due 10/30
+Mon, Nov 2 | <span class="tentative">Control flow</span>  | |
 Wed, Nov 4 | <span class="tentative">Procedures</span>
 Mon, Nov 9 | <span class="tentative">Peephole optimization</span>
 Wed, Nov 11 |  | | [A4](assign/assign04.html) due 11/13
