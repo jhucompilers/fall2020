@@ -3,6 +3,8 @@ layout: default
 title: "Assignment 3: Semantic analysis"
 ---
 
+*Update 10/28*: clarified semantics of assignments; see [Semantics, type checking](#semantics-type-checking)
+
 **Due**: Friday, Oct 30th by 11pm
 
 Points: This assignment is worth 150 points
@@ -248,6 +250,13 @@ For a field reference, the designator must have a record type, and the type of t
 `WRITE` statements are used for output, and the expression specifying the value to output must be either `INTEGER`, `CHAR`, or array of `CHAR` (any length).
 
 `READ` statements are used for input, and the designator specifying the variable where the input should be stored must be either `INTEGER`, `CHAR`, or array of `CHAR`.
+
+For this assignment, the follow type checking rules should be applied for assignments:
+
+* Only `INTEGER` and `CHAR` values may be assigned
+* The type of the designator on the left hand side of the assignment must be exactly the same as the type of the right hand side
+
+These rules may be relaxed for subsequent assignments.
 
 ## Errors
 
