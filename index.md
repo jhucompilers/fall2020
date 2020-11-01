@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Nov 1** — [Assignment 4](assign/assign04.html) has been posted, due **Friday, Nov 13th** by 11pm.  Note that the assignment description will be updated to fill in some additional details in the near future.
 * **Oct 28** — [Assignment 3](assign/assign03.html) has been updated to specify type checking rules for assignments.
 * **Oct 18** — [Assignment 3](assign/assign03.html) has been posted, due Friday, Oct 30th. Also, the [Schedule](schedule.html) and [Assignments](assignments.html) pages have been updated to indicate the remaining assignment due dates.
 * **Oct 6** — [Assignment 2](assign/assign02.html) has been updated with an improved version of [scan\_grammar\_symbols.rb](assign/assign02/scan_grammar_symbols.rb), which allows `%token` directives to specify arbitrary `%union` fields.
