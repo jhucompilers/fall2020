@@ -9,6 +9,8 @@ title: "Assignment 4: Basic code generation"
 
 Points: This assignment is worth 200 points
 
+*Update 11/2*: the [emitting low-level instructions](#emitting-low-level-instructions) section has been updated with a demo program showing how to generate x86-64 code
+
 # Overview
 
 In this assignment, you will implement x86-64 assembly code generation for the source language you wrote a front-end for in [Assignment 3](assign03.html).
@@ -37,7 +39,7 @@ The following source files are provided as a reference for a "code-like" interme
 
 Note that the `PrintInstructionSequence` class in `cfg.h` and `cfg.cpp` is able to print x86-64 assembly code in the formated expected by the GNU assembler.  (Specifically, this is implemented by the `PrintX86_64InstructionSequence` class.)
 
-You are not required to use any of the above code.
+You are not required to use any of the above code, but you are welcome to use it.
 
 # Language semantics
 
@@ -138,6 +140,28 @@ The assumption is that the high-level instruction has two operands, `hlins[0]`, 
 The `vreg_ref` method translates an `Operand` referring to a virtual register ("vreg") into a low-level (x86-64) memory reference operand.  The low-level operand would take into account where the storage for virtual registers is allocated in memory, as well as the offset of the specific virtual register in the block of memory allocated for all virtual registers.
 
 `MINS_MOVQ` is a low-level opcode specifying the x86-64 `movq` instruction.
+
+Here is a demo program which generates a complete x86-64 assembly language program: [genhello.cpp](assign04/genhello.cpp)
+
+The demo program needs to be linked against `cfg.o`, `x86_64.o`, and `cpputil.o`:
+
+```
+g++ -g -Wall -c genhello.cpp
+g++ -g -Wall -c cfg.cpp
+g++ -g -Wall -c x86_64.cpp
+g++ -g -Wall -c cpputil.cpp
+g++ -o genhello genhello.o cfg.o x86_64.o cpputil.o
+```
+
+You can assemble and run the generated program as follows:
+
+```
+./genhello > hello.S
+gcc -g -no-pie -o hello hello.S
+./hello
+```
+
+Comparing the code in `genhello.cpp` with the output in `hello.S` should help give you a sense of how the data structure representation of x86-64 (using `Operand`, `Instruction`, and `InstructionSequence`) corresponds to the generated assembly language code.
 
 ## Some example translations
 
