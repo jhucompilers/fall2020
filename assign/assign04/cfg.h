@@ -200,6 +200,9 @@ public:
   // sequence (i.e., not labeling any actual Instruction)
   bool has_label_at_end() const;
 
+  // get the label at the end
+  std::string get_label_at_end() const;
+
   iterator begin() { return m_instr_seq.begin(); }
   iterator end() { return m_instr_seq.end(); }
   const_iterator cbegin() const { return m_instr_seq.cbegin(); }

@@ -201,6 +201,11 @@ bool InstructionSequence::has_label_at_end() const {
   return !m_next_label.empty();
 }
 
+std::string InstructionSequence::get_label_at_end() const {
+  assert(has_label_at_end());
+  return m_next_label;
+}
+
 ////////////////////////////////////////////////////////////////////////
 // PrintInstructionSequence implementation 
 ////////////////////////////////////////////////////////////////////////
@@ -241,6 +246,11 @@ void PrintInstructionSequence::print() {
     Instruction *ins = m_iseq->get_instruction(i);
     std::string formatted_ins = format_instruction(ins);
     printf("\t%s\n", formatted_ins.c_str());
+  }
+
+  // special case: if there is a label at the end, print it
+  if (m_iseq->has_label_at_end()) {
+    printf("%s:\n", m_iseq->get_label_at_end().c_str());
   }
 }
 
