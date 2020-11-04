@@ -35,7 +35,7 @@ Wed, Oct 21 | Code shape for expressions: [slides](/lectures/Code_Shape_I_Quick_
 Mon, Oct 26 | <b>Exam 2 out</b>, x86-64 assembly language, code generation: [slides](lectures/lecture16-public.pdf) | 
 Wed, Oct 28 | Arrays and strings: [slides](lectures/Code_Shape_II_Arrays_Aggregates_&_Strings.pdf) | EaC 7.5–7.7 | [A3](assign/assign03.html) due 10/30
 Mon, Nov 2 | Boolean and relational expressions, decisions and loops: [slides](lectures/Code_Shape_III_Boolean_and_Relational_Expressions_+_Control_Flow.pdf)  | EaC 7.8 |
-Wed, Nov 4 | Intro to Code optimization: [slides](lectures/Introduction_to_Optimization_terminology_&_local_value_numbering.pdf), [slides](Regional_Optimization_Superlocal_Value_Numbering_and_Loop_Unrolling.pdf) | EaC 8.1–8.5 |
+Wed, Nov 4 | Intro to Code optimization: [slides](lectures/Introduction_to_Optimization_terminology_&_local_value_numbering.pdf), [slides](lectures/Regional_Optimization_Superlocal_Value_Numbering_and_Loop_Unrolling.pdf) | EaC 8.1–8.5 |
 Mon, Nov 9 | <span class="tentative">Peephole optimization</span>
 Wed, Nov 11 | <span class="tentative">Register allocation</span> | | [A4](assign/assign04.html) due 11/13
 Mon, Nov 16 | <b>Exam 3 out</b>, <span class="tentative">Dataflow analysis</span>
