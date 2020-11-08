@@ -3,13 +3,13 @@ layout: default
 title: "Assignment 4: Basic code generation"
 ---
 
-*This assignment description is somewhat preliminary, and will be updated*
-
 **Due**: Friday, Nov 13th by 11pm
 
 Points: This assignment is worth 200 points
 
 *Update 11/2*: the [emitting low-level instructions](#emitting-low-level-instructions) section has been updated with a demo program showing how to generate x86-64 code
+
+*Update 11/8*: the [Grading criteria](#grading-criteria) section has been updated with detailed breakdowns for both 428 and 628 students, and the [Language semantics](#language-semantics) section has been updated with behaviors for reading and writing `CHAR`s and `CHAR` arrays
 
 # Overview
 
@@ -26,6 +26,27 @@ The grading criteria are as follows:
 * Functional requirements: 85%
 
 For the part of the grade allocated to functional requirements, the grading will be substantially weighted towards correct compilation of programs involving only `INTEGER` variables and values (no arrays or records.)  You should get this working correctly, including control flow (`IF`, `ELSE`, `WHILE`, `REPEAT`) before tackling arrays and records.
+
+Functional requirements grading for 428 students:
+
+* INTEGER variables, expressions, and scalar assignments, READ and WRITE: 40%
+* Control flow (IF, IF/ELSE, WHILE, REPEAT): 15%
+* One-dimensional arrays of INTEGER elements: 10%
+* Record types with INTEGER fields: 10%
+* Arrays of record elements: 5%
+* Records with array fields: 5%
+
+Functional requirements grading for 628 students:
+
+* INTEGER variables, expressions, and scalar assignments, READ and WRITE: 30%
+* Control flow (IF, IF/ELSE, WHILE, REPEAT): 15%
+* One-dimensional arrays of INTEGER elements: 10%
+* Two-dimensional arrays of INTEGER elements: 10%
+* Record types with INTEGER fields: 10%
+* Arrays of record elements (including 2-D arrays): 5%
+* Records with array fields (including 2-D arrays): 5%
+
+Semantics for CHAR variables are values are specified, but you are not officially required to implement them.
 
 # Getting started
 
@@ -50,12 +71,33 @@ The `INTEGER` data type must be a signed integer type with at least 32 bits of p
 A `READ` statement should work as follows:
 
 * For reading into an `INTEGER` variable (or array element, or field), the compiled program should make a call to the `scanf` function to read a single integer value
-* *Coming soon, behavior of READ using other types*
+* For reading into a `CHAR` variable (or array element, or field), the compiled program should make a call equivalent to
+    ```c
+    char ch;
+    scanf(" %c", &ch);
+    ```
+  where `ch` will contain the single, non-space character read by `scanf`
+* For reading into an array of `CHAR` elements, the compiled program should make a call equivalent to
+    ```c
+    scanf("%s", arr);
+    ```
+  where `arr` is the array into which the input is being read
 
 A `WRITE` statement should work as follows:
 
 * For writing an `INTEGER` value, the compiled program should print its decimal representation, followed by a single newline (`\n`) character; you should use `printf` to generate the output
-* *Coming soon, behavior of WRITE using other types*
+* For writing a single `CHAR` value, the compiled program should make a call equivalent to
+    ```c
+    printf("%c\n", ch);
+    ```
+  where `ch` contains the character value to be printed
+* For writing an array of `CHAR` values, the compiled program should make a call equivalent to
+    ```c
+    printf("%s\n", arr);
+    ```
+  where `arr` is the array being printed
+
+Note that the behaviors for reading and writing `CHAR` arrays imply that they operand on NUL-terminated character strings, i.e., the same representation that C uses.
 
 Array subscript references do not need to be bounds-checked.
 
