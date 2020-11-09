@@ -207,10 +207,22 @@ Comparing the code in `genhello.cpp` with the output in `hello.S` should help gi
 
 ## Some example translations
 
+<!--
 For the [loop01](https://github.com/jhucompilers/fall2020-tests/blob/master/assign04/input/loop01.in) program in the test repo, here are possible high-level and low-level translations:
 
 * [loop01.txt](assign04/loop01.txt): high-level code
 * [loop01.S](assign04/loop01.S): generated x86-64 assembly code
+-->
+
+Here are some translations of test programs:
+
+Test program | High-level code | Generated x86-64 code
+------------ | --------------- | ---------------------
+[arith10](https://github.com/jhucompilers/fall2020-tests/blob/master/assign04/input/arith10.in) | [arith10.txt](assign04/arith10.txt) | [arith10.S](assign04/arith10.S)
+[loop01](https://github.com/jhucompilers/fall2020-tests/blob/master/assign04/input/loop01.in) | [loop01.txt](assign04/loop01.txt) | [loop01.S](assign04/loop01.S)
+[array01](https://github.com/jhucompilers/fall2020-tests/blob/master/assign04/input/array01.in) | [array01.txt](assign04/array01.txt) | [array01.S](assign04/array01.S)
+[array02](https://github.com/jhucompilers/fall2020-tests/blob/master/assign04/input/array02.in) | [array02.txt](assign04/array02.txt) | [array02.S](assign04/array02.S)
+[record10](https://github.com/jhucompilers/fall2020-tests/blob/master/assign04/input/record10.in) | [record10.txt](assign04/record10.txt) | [record10.S](assign04/record10.S)
 
 Note that these translations are by no means the only possible translations, or even "good" translations.  In fact, the generated x86-64 code is pretty awful!  This is due to the simplistic storage model being used.  In [Assignment 5](assign/assign05.html) we'll use techniques such as register allocation and peephole optimization to generate better assembly code.
 

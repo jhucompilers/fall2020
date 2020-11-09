@@ -86,4 +86,5 @@ main:
 	movq 64(%rsp), %rsi
 	call printf
 	addq $72, %rsp
+	movl $0, %eax
 	ret
