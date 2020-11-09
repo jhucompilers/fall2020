@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Assignments"
+category: "assignments"
 ---
 
 This page has links to the programming assignments, along with their due dates.

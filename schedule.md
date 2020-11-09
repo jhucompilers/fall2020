@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Schedule"
+category: "schedule"
 ---
 
 This page lists lecture topics, readings, and exam dates.  It also lists assignment due dates.
@@ -36,10 +37,10 @@ Mon, Oct 26 | <b>Exam 2 out</b>, x86-64 assembly language, code generation: [sli
 Wed, Oct 28 | Arrays and strings: [slides](lectures/Code_Shape_II_Arrays_Aggregates_&_Strings.pdf) | EaC 7.5–7.7 | [A3](assign/assign03.html) due 10/30
 Mon, Nov 2 | Boolean and relational expressions, decisions and loops: [slides](lectures/Code_Shape_III_Boolean_and_Relational_Expressions_+_Control_Flow.pdf)  | EaC 7.8 |
 Wed, Nov 4 | Intro to Code optimization: [slides](lectures/Introduction_to_Optimization_terminology_&_local_value_numbering.pdf), [slides](lectures/Regional_Optimization_Superlocal_Value_Numbering_and_Loop_Unrolling.pdf) | EaC 8.1–8.5 |
-Mon, Nov 9 | <span class="tentative">Peephole optimization</span>
-Wed, Nov 11 | <span class="tentative">Register allocation</span> | | [A4](assign/assign04.html) due 11/13
-Mon, Nov 16 | <b>Exam 3 out</b>, <span class="tentative">Dataflow analysis</span>
-Wed, Nov 18 | <span class="tentative"></span>
+Mon, Nov 9 | Intro to Global optimization, Instruction selection: [slides](lectures/Global_Optimization_Live_Analysis.pdf), [slides](lectures/Introduction_to_Instruction_Selection_and_Peephole_based_Selection.pdf) | EaC 8.6, 11.5
+Wed, Nov 11 | Instruction selection, continued | | [A4](assign/assign04.html) due 11/13
+Mon, Nov 16 | <b>Exam 3 out</b>, <span class="tentative">Register allocation</span>
+Wed, Nov 18 |  <span class="tentative">Dataflow analysis</span>
 Mon, Nov 23 | *Thanksgiving break*
 Wed, Nov 25 | *Thanksgiving break*
 Mon, Nov 30 | <span class="tentative">Dataflow analysis</span>  | | [A5](assign/assign05.html) due today

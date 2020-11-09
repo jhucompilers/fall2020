@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Nov 9** — The [Schedule](schedule.html) has been updated, and some x86-64 assembly language resources are posted on the [Resources](resources.html) page.
 * **Nov 8** — [Assignment 4](assign/assign04.html) has been updated with more specific grading criteria for 428 and 628 students.
 * **Nov 1** — [Assignment 4](assign/assign04.html) has been posted, due **Friday, Nov 13th** by 11pm.  Note that the assignment description will be updated to fill in some additional details in the near future.
 * **Oct 28** — [Assignment 3](assign/assign03.html) has been updated to specify type checking rules for assignments.
