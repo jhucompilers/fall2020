@@ -39,7 +39,7 @@ Mon, Nov 2 | Boolean and relational expressions, decisions and loops: [slides](l
 Wed, Nov 4 | Intro to Code optimization: [slides](lectures/Introduction_to_Optimization_terminology_&_local_value_numbering.pdf), [slides](lectures/Regional_Optimization_Superlocal_Value_Numbering_and_Loop_Unrolling.pdf) | EaC 8.1–8.5 |
 Mon, Nov 9 | Intro to Global optimization, Instruction selection: [slides](lectures/Global_Optimization_Live_Analysis.pdf), [slides](lectures/Introduction_to_Instruction_Selection_and_Peephole_based_Selection.pdf) | EaC 8.6, 11.5
 Wed, Nov 11 | Instruction selection, continued | | [A4](assign/assign04.html) due 11/13
-Mon, Nov 16 | <b>Exam 3 out</b>, Local register allocation: [slides](lectures/Local_Register_Allocation_and_Lab_1.pdf)
+Mon, Nov 16 | <b>Exam 3 out</b>, Local register allocation: [slides](lectures/Local_Register_Allocation_and_Lab_1.pdf) | EaC 11.1–11.3
 Wed, Nov 18 |  <span class="tentative">Dataflow analysis</span>
 Mon, Nov 23 | *Thanksgiving break*
 Wed, Nov 25 | *Thanksgiving break*
