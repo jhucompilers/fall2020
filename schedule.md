@@ -40,7 +40,7 @@ Wed, Nov 4 | Intro to Code optimization: [slides](lectures/Introduction_to_Optim
 Mon, Nov 9 | Intro to Global optimization, Instruction selection: [slides](lectures/Global_Optimization_Live_Analysis.pdf), [slides](lectures/Introduction_to_Instruction_Selection_and_Peephole_based_Selection.pdf) | EaC 8.6, 11.5
 Wed, Nov 11 | Instruction selection, continued | | [A4](assign/assign04.html) due 11/13
 Mon, Nov 16 | <b>Exam 3 out</b>, Local register allocation: [slides](lectures/Local_Register_Allocation_and_Lab_1.pdf) | EaC 13.1–13.3
-Wed, Nov 18 |  <span class="tentative">Dataflow analysis</span>
+Wed, Nov 18 | Discussion and [advice](assign/assign05-advice.html) on implementing code optimization 
 Mon, Nov 23 | *Thanksgiving break*
 Wed, Nov 25 | *Thanksgiving break*
 Mon, Nov 30 | <span class="tentative">Dataflow analysis</span>

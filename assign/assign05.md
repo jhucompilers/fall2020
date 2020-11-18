@@ -7,6 +7,8 @@ title: "Assignment 5: Better code generation"
 
 Points: This assignment is worth 150 points
 
+*Update 11/18*: Added link to [detailed advice](assign05-advice.html) document, added requirement to support a [-o command line option](#adding-an-optimization-flag) to enable code optimization
+
 # Overview
 
 In this assignment, you will implement optimizations to improve the target code quality
@@ -31,6 +33,24 @@ The following source files are provided to implement a control flow graph repres
 * [x86\_64.h](assign05/x86_64.h), [x86\_64.cpp](assign05/x86_64.cpp): expanded to provide `X86_64ControlFlowGraphBuilder` and `X86_64ControlFlowGraphPrinter` types
 
 # Your task
+
+## Adding an optimization flag
+
+Your compiler should support a `-o` command line option.  When present, it indicates that the compiler should perform code optimization before emitting target assembly language.
+
+For example, the invocation
+
+```
+./compiler -o input/array20.in
+```
+
+would generate optimized code for the source program `input/array20.in`, while the invocation
+
+```
+./compiler input/array20.in
+```
+
+would generate unoptimized code.
 
 ## Implementing optimizations
 
@@ -84,6 +104,8 @@ For each optimization technique you implemented, your report should document
 Your report should also discuss what inefficiencies remain in the generated code, and what optimization techniques might be helpful for addressing them.
 
 # Hints and suggestions
+
+In addition to the hints and suggestions included below, there is a [detailed advice document](assign05-advice.html) which has some fairly detailed suggestions for how to approach this assignment.
 
 ## Ideas for optmizations to implement
 
