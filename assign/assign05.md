@@ -9,6 +9,8 @@ Points: This assignment is worth 150 points
 
 *Update 11/18*: Added link to [detailed advice](assign05-advice.html) document, added requirement to support a [-o command line option](#adding-an-optimization-flag) to enable code optimization
 
+*Update 11/20*: Added sections on [framework for optimizations](#framework-for-optimizations) and [live variables analysis](#live-variables-analysis)
+
 # Overview
 
 In this assignment, you will implement optimizations to improve the target code quality
@@ -155,6 +157,24 @@ InstructionSequence *result_iseq = cfg->create_instruction_sequence();
 ```
 
 Note that the `create_instruction_sequence()` method is not guaranteed to work if the structure of the `ControlFlowGraph` was modified.  I.e., we do not recommend implementing optimizations which change control flow.  Local optimizations (within single basic blocks) are recommended.
+
+## Framework for optimizations
+
+The [cfg\_transform.h](assign05/cfg_transform.h) and [cfg\_transform.cpp](assign05/cfg_transform.cpp) source files demonstrate how to transform a `ControlFlowGraph` by transforming each basic block.  The idea is to override the `transform_basic_block` member function.  In general, this class should be useful for implementing any local (basic block level) optimization.
+
+## Live variables analysis
+
+The [live\_vregs.h](assign05/live_vregs.h) and [live\_vregs.cpp](assign05/live_vregs.cpp) source files implement [global live variables analysis](../lectures/Global_Optimization_Live_Analysis.pdf) for virtual registers.  You may find this useful for determining which instructions are safe to eliminate after local optimizations are applied.  Note that you will need to add the following member functions to the `BasicBlock` class:
+
+```
+const_reverse_iterator crbegin() const { return m_instr_seq.crbegin(); }
+const_reverse_iterator crend() const { return m_instr_seq.crend(); }
+```
+
+This code also assumes the existence of `HighLevel::is_def` and `HighLevel::is_use` functions, which determine (respectively)
+
+* whether an instruction is a def (assignment to a virtual register), and
+* whether an operand of an instruction is a use of a virtual register
 
 # Submitting
 

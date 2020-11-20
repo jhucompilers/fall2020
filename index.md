@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Nov 20** — [Assignment 5](assign/assign05.html) has been updated with some additional resources for implementing optimizations.
 * **Nov 18** — [Assignment 5](assign/assign05.html) has been updated with [detailed advice](assign/assign05.html) on how to approach implementing code optimization, and also a requirement to support an optimization flag (`-o`) as a command line argument.
 * **Nov 15** — [Assignment 5](assign/assign05.html) has been posted, due **Friday, Dec 4th** by 11pm.  Also, [Assignment 6](assign/assign06.html) will be an optional assignment.
 * **Nov 9** — [Assignment 4](assign/assign04.html) has been updated with more example translations (high-level and x86-64).
