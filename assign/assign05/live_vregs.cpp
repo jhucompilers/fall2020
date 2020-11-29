@@ -94,7 +94,7 @@ LiveVregs::LiveSet LiveVregs::get_fact_after_instruction(BasicBlock *bb, Instruc
     if (*i == ins) {
       break;
     }
-    model_instruction(ins, live_set);
+    model_instruction(*i, live_set);
   }
 
   return live_set;
@@ -104,7 +104,7 @@ LiveVregs::LiveSet LiveVregs::get_fact_before_instruction(BasicBlock *bb, Instru
   LiveSet live_set = m_endfacts[bb->get_id()];
 
   for (auto i = bb->crbegin(); i != bb->crend(); i++) {
-    model_instruction(ins, live_set);
+    model_instruction(*i, live_set);
     if (*i == ins) {
       break;
     }

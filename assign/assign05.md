@@ -11,6 +11,8 @@ Points: This assignment is worth 150 points
 
 *Update 11/20*: Added sections on [framework for optimizations](#framework-for-optimizations) and [live variables analysis](#live-variables-analysis)
 
+*Update 11/29*: The [live\_vregs.cpp](assign05/live_vregs.cpp) source file has been updated to fix bugs in the `get_fact_before_instruction` and `get_fact_after_instruction` member functions
+
 # Overview
 
 In this assignment, you will implement optimizations to improve the target code quality
