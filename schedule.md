@@ -43,7 +43,7 @@ Mon, Nov 16 | <b>Exam 3 out</b>, Local register allocation: [slides](lectures/Lo
 Wed, Nov 18 | Discussion and [advice](assign/assign05-advice.html) on implementing code optimization 
 Mon, Nov 23 | *Thanksgiving break*
 Wed, Nov 25 | *Thanksgiving break*
-Mon, Nov 30 | <span class="tentative">Dataflow analysis</span>
+Mon, Nov 30 | Dataflow analysis: [slides](lectures/foster-dataflow.pdf) | EaC 9.1–9.2, [Killdall-POPL73](lectures/killdall-popl73.pdf)
 Wed, Dec 2 | <span class="tentative">Procedures</span>  | | [A5](assign/assign05.html) due 12/4
 Mon, Dec 7 | <span class="tentative"></span>
 Wed, Dec 9 | <span class="tentative"></span> | | [A6](assign/assign06.html) due today
