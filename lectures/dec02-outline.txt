@@ -1,0 +1,60 @@
+Compilers 12/2/20
+
+Finish covering dataflow analysis
+
+Discuss ideas for generalization 
+  Details to be abstracted
+  - dataflow fact type
+  - direction of analysis (for computing iteration order, "logical"
+    predecessors)
+  - block transfer function
+  - how to combine facts from logical predecessors
+  All of these can be represented by C++ type parameters
+  - fact type: type parameter
+  - direction of analysis: boolean data value?
+  - block transfer function: functor type
+  - combining transfer function: functor type
+
+Top/bottom values, lattice representation
+  - meet operation: how logical predecessor facts are combined
+    (e.g., set union for live vars analysis, in general, union for
+    may analysis, intersection for must analysis)
+  - top: initial value of "logical entry" facts, e.g.,
+    for live variables, empty set
+    - is identity element of meet operation
+  - bottom: is zero element of lattice
+    - e.g., for live vars, set of all virtual registers,
+      more generally, empty set for must analyses,
+      universal set for may analyses
+    - represents the "least useful" fact
+  - because transfer functions are monotone, "logical exit"
+    values (result of block transfer function) can only progress
+    from top to bottom
+    - lattice must have a fixed height
+    - so, analysis will eventually terminate
+
+More thoughts about code optimization
+  - communicating register assignments to target code generator
+    - I added a field to Operand
+  - register allocation: initially, just exit with a fatal error
+    if not enough machine regs are available
+    - i.e., don't worry too much initially about spills and restores
+  - target code generator must be prepared to translate a high-level
+    operand into a machine operand
+    - may require a temporary register! e.g., a vreg allocated
+      to memory that is being used as a pointer
+    - show to_machine_operand member function
+  - optimizations interact in interesting ways
+    - pass to remove dead stores to vregs removed references
+      to a vreg which had been allocated a callee-save register
+      (not a big deal, because the program had no control flow)
+    - needed two passes of dead store removal (removing one dead
+      store may make a previous store dead, e.g. "b = a; c = b;",
+      if "c = b" store is dead, then "b = a" store will become
+      dead)
+  - need to save and restore caller-save registers before and
+    after call instructions (i.e., scanf and printf for
+    readi and writei)
+    - register allocator can communicate the set of used caller-save
+      registers as a data value in the call Instruction
+    - I used a bitset
