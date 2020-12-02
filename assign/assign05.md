@@ -203,6 +203,8 @@ Unoptimized time | Optimized time | Optimized time (no reg alloc)
 :--------------: | :------------: | :---------------------------:
 1.657s           | 0.313s         | 0.894s
 
+Times are on Linux, using a Core i7-4771 processor.
+
 This is a nice speedup, but it's worth noting that the quality of the unoptimized code is not great.
 
 Interestingly, there is a reasonably substantial speedup from just removing redundant operations, without doing any register allocation.
