@@ -3,7 +3,7 @@ layout: default
 title: "Assignment 5: Better code generation"
 ---
 
-**Due**: Friday, Dec 4th by 11pm
+**Due**: Friday, Dec 4th by 11pm (you may submit as late as Friday, Dec 11th for full credit)
 
 Points: This assignment is worth 150 points
 
