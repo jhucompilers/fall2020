@@ -207,7 +207,7 @@ Times are on Linux, using a Core i7-4771 processor.
 
 This is a nice speedup, but it's worth noting that the quality of the unoptimized code is not great.
 
-Interestingly, there is a reasonably substantial speedup from just removing redundant operations, without doing any register allocation.
+Interestingly, there is a reasonably substantial speedup from just removing redundant operations, without doing general-purpose register allocation for virtual registers. (The optimization to place scalar loop variables in callee-saved registers *is* applied.)
 
 # Submitting
 
