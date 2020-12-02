@@ -13,6 +13,8 @@ Points: This assignment is worth 150 points
 
 *Update 11/29*: The [live\_vregs.cpp](assign05/live_vregs.cpp) source file has been updated to fix bugs in the `get_fact_before_instruction` and `get_fact_after_instruction` member functions
 
+*Update 12/2*: Fixed explanation of where to add `crbegin()` and `crend()` member functions; added [Generated code examples](#generated-code-examples) section
+
 # Overview
 
 In this assignment, you will implement optimizations to improve the target code quality
@@ -166,17 +168,44 @@ The [cfg\_transform.h](assign05/cfg_transform.h) and [cfg\_transform.cpp](assign
 
 ## Live variables analysis
 
-The [live\_vregs.h](assign05/live_vregs.h) and [live\_vregs.cpp](assign05/live_vregs.cpp) source files implement [global live variables analysis](../lectures/Global_Optimization_Live_Analysis.pdf) for virtual registers.  You may find this useful for determining which instructions are safe to eliminate after local optimizations are applied.  Note that you will need to add the following member functions to the `BasicBlock` class:
+The [live\_vregs.h](assign05/live_vregs.h) and [live\_vregs.cpp](assign05/live_vregs.cpp) source files implement [global live variables analysis](../lectures/Global_Optimization_Live_Analysis.pdf) for virtual registers.  You may find this useful for determining which instructions are safe to eliminate after local optimizations are applied.  Note that you will need to add the following member functions to the `InstructionSequence` class:
 
 ```
 const_reverse_iterator crbegin() const { return m_instr_seq.crbegin(); }
 const_reverse_iterator crend() const { return m_instr_seq.crend(); }
 ```
 
+(Note: the assignment previously suggested putting these member functions in `BasicBlock`, but they really should be in `InstructionSequence`, which is `BasicBlock`'s base class.)
+
 This code also assumes the existence of `HighLevel::is_def` and `HighLevel::is_use` functions, which determine (respectively)
 
 * whether an instruction is a def (assignment to a virtual register), and
 * whether an operand of an instruction is a use of a virtual register
+
+## Generated code examples
+
+Here are some examples of generated code after optimizations are applied.  The optimized code is better than the unoptimized, but many opportunities for improvements remain.
+
+Source | Unopt high-level | Unopt x86-64 | Opt high-level | Opt x86-64
+------ | ---------------- | ------------ | -------------- | ----------
+[loop01.in](https://github.com/jhucompilers/fall2020-tests/blob/master/assign05/input/loop01.in) | [loop01-unopt.txt](assign05/ex/loop01-unopt.txt) | [loop01-unopt.S](assign05/ex/loop01-unopt.S) | [loop01-opt.txt](assign05/ex/loop01-opt.txt) | [loop01-opt.S](assign05/ex/loop01-opt.S)
+[loop02.in](https://github.com/jhucompilers/fall2020-tests/blob/master/assign05/input/loop02.in) | [loop02-unopt.txt](assign05/ex/loop02-unopt.txt) | [loop02-unopt.S](assign05/ex/loop02-unopt.S) | [loop02-opt.txt](assign05/ex/loop02-opt.txt) | [loop02-opt.S](assign05/ex/loop02-opt.S)
+[loop03.in](https://github.com/jhucompilers/fall2020-tests/blob/master/assign05/input/loop03.in) | [loop03-unopt.txt](assign05/ex/loop03-unopt.txt) | [loop03-unopt.S](assign05/ex/loop03-unopt.S) | [loop03-opt.txt](assign05/ex/loop03-opt.txt) | [loop03-opt.S](assign05/ex/loop03-opt.S)
+[loop04.in](https://github.com/jhucompilers/fall2020-tests/blob/master/assign05/input/loop04.in) | [loop04-unopt.txt](assign05/ex/loop04-unopt.txt) | [loop04-unopt.S](assign05/ex/loop04-unopt.S) | [loop04-opt.txt](assign05/ex/loop04-opt.txt) | [loop04-opt.S](assign05/ex/loop04-opt.S)
+[array10.in](https://github.com/jhucompilers/fall2020-tests/blob/master/assign05/input/array10.in) | [array10-unopt.txt](assign05/ex/array10-unopt.txt) | [array10-unopt.S](assign05/ex/array10-unopt.S) | [array10-opt.txt](assign05/ex/array10-opt.txt) | [array10-opt.S](assign05/ex/array10-opt.S)
+[array20.in](https://github.com/jhucompilers/fall2020-tests/blob/master/assign05/input/array20.in) | [array20-unopt.txt](assign05/ex/array20-unopt.txt) | [array20-unopt.S](assign05/ex/array20-unopt.S) | [array20-opt.txt](assign05/ex/array20-opt.txt) | [array20-opt.S](assign05/ex/array20-opt.S)
+[multidim10.in](https://github.com/jhucompilers/fall2020-tests/blob/master/assign05/input/multidim10.in) | [multidim10-unopt.txt](assign05/ex/multidim10-unopt.txt) | [multidim10-unopt.S](assign05/ex/multidim10-unopt.S) | [multidim10-opt.txt](assign05/ex/multidim10-opt.txt) | [multidim10-opt.S](assign05/ex/multidim10-opt.S)
+[multidim20.in](https://github.com/jhucompilers/fall2020-tests/blob/master/assign05/input/multidim20.in) | [multidim20-unopt.txt](assign05/ex/multidim20-unopt.txt) | [multidim20-unopt.S](assign05/ex/multidim20-unopt.S) | [multidim20-opt.txt](assign05/ex/multidim20-opt.txt) | [multidim20-opt.S](assign05/ex/multidim20-opt.S)
+
+Here is one data point comparing the performance of the optimized code compared to unoptimized, for the [array20.in](https://github.com/jhucompilers/fall2020-tests/blob/master/assign05/input/array20.in) test program, reporting the `user` time on the average of 3 test runs:
+
+Unoptimized time | Optimized time | Optimized time (no reg alloc)
+:--------------: | :------------: | :---------------------------:
+1.657s           | 0.313s         | 0.894s
+
+This is a nice speedup, but it's worth noting that the quality of the unoptimized code is not great.
+
+Interestingly, there is a reasonably substantial speedup from just removing redundant operations, without doing any register allocation.
 
 # Submitting
 

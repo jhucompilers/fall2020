@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Dec 2** — [Assignment 5](assign/assign05.html) has been updated with example generated code and performance results, and a clarification about where to add the `crbegin()` and `crend()` member functions needed by the live virtual registers analysis.
 * **Nov 29** — [Assignment 5](assign/assign05.html) has been updated with a bugfix to the live virtual registers analysis implementation.
 * **Nov 20** — [Assignment 5](assign/assign05.html) has been updated with some additional resources for implementing optimizations.
 * **Nov 18** — [Assignment 5](assign/assign05.html) has been updated with [detailed advice](assign/assign05.html) on how to approach implementing code optimization, and also a requirement to support an optimization flag (`-o`) as a command line argument.
