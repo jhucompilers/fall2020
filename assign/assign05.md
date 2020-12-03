@@ -193,7 +193,23 @@ Note that `LiveVregsControlFlowGraphPrinter` assumes that
 
 * `HighLevelControlFlowGraphBuilder` has a virtual `format_instruction` member function which can be overridden, and that its `print_basic_block` member function calls `format_instruction`
 
-You will likely need to make some code changes to allow `LiveVregsControlFlowGraphPrinter` to work.
+You will likely need to make some code changes to allow `LiveVregsControlFlowGraphPrinter` to work.  Here are possible implementations of `print_basic_block` and `format_instruction` for the `HighLevelControlFlowGraphBuilder` class:
+
+```cpp
+void HighLevelControlFlowGraphPrinter::print_basic_block(BasicBlock *bb) {
+  for (auto i = bb->cbegin(); i != bb->cend(); i++) {
+    Instruction *ins = *i;
+    std::string s = format_instruction(bb, ins);
+    printf("\t%s\n", s.c_str());
+  }
+}
+
+std::string HighLevelControlFlowGraphPrinter::format_instruction(BasicBlock *bb,
+                                                                 Instruction *ins) {
+  PrintHighLevelInstructionSequence p;
+  return p.format_instruction(ins);
+}
+```
 
 ## Generated code examples
 
