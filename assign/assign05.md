@@ -182,6 +182,19 @@ This code also assumes the existence of `HighLevel::is_def` and `HighLevel::is_u
 * whether an instruction is a def (assignment to a virtual register), and
 * whether an operand of an instruction is a use of a virtual register
 
+If you would like to be able to print a control flow graph annotated with live virtual registers (after each instruction), you can use the following "improved" versions:
+
+* [live\_vregs.h](assign05/r/live_vregs.h)
+* [live\_vregs.cpp](assign05/r/live_vregs.cpp)
+
+The `LiveVregsControlFlowGraphPrinter` class is a version of `PrintHighLevelControlFlowGraph` that prints the live virtual register sets.
+
+Note that `LiveVregsControlFlowGraphPrinter` assumes that
+
+* `HighLevelControlFlowGraphBuilder` has a virtual `format_instruction` member function which can be overridden, and that its `print_basic_block` member function calls `format_instruction`
+
+You will likely need to make some code changes to allow `LiveVregsControlFlowGraphPrinter` to work.
+
 ## Generated code examples
 
 Here are some examples of generated code after optimizations are applied.  The optimized code is better than the unoptimized, but many opportunities for improvements remain.
