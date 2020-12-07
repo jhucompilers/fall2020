@@ -45,6 +45,5 @@ Mon, Nov 23 | *Thanksgiving break*
 Wed, Nov 25 | *Thanksgiving break*
 Mon, Nov 30 | Dataflow analysis: [slides](lectures/foster-dataflow.pdf) | EaC 9.1–9.2, [Killdall-POPL73](lectures/killdall-popl73.pdf)
 Wed, Dec 2 | Dataflow analysis, continued; [more code optimization advice](lectures/dec02-outline.txt)  | | [A5](assign/assign05.html) due 12/4
-Mon, Dec 7 | <span class="tentative"></span>
-Wed, Dec 9 | <span class="tentative"></span> | | [A6](assign/assign06.html) due today
+Mon, Dec 7 | Last day of class: [slides](lectures/lecture26-public.pdf) | [Gosling-IR95](https://dl.acm.org/doi/pdf/10.1145/202530.202541) | 
 —          | <b>Exam 4</b> will be due during the final exam period
