@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Dec 8** — Details of the optional [Assignment 6](assign/assign06.html) are available.
 * **Dec 2** — You may submit [Assignment 5](assign/assign05.html) as late as Friday, Dec 11th for full credit.
 * **Dec 2** — [Assignment 5](assign/assign05.html) has been updated with example generated code and performance results, and a clarification about where to add the `crbegin()` and `crend()` member functions needed by the live virtual registers analysis.
 * **Nov 29** — [Assignment 5](assign/assign05.html) has been updated with a bugfix to the live virtual registers analysis implementation.
